@@ -9,18 +9,24 @@ wheregoHomeApp.config(['$routeProvider',
                     function($routeProvider) {
                       $routeProvider.
                         when('/aboutus', {
-                        	templateUrl: 'pages/aboutus.html'
+                        	templateUrl: 'pages/aboutus.html',
+                        	title:'about wherego'
                         }).
                         when('/products', {
-                            templateUrl: 'pages/products.html'
+                            templateUrl: 'pages/products.html',
+                            title:'wherego products'
                           }).
                         when('/jobs', {
-                        	templateUrl: 'pages/jobs.html'
+                        	templateUrl: 'pages/jobs.html',
+                        	title:'looking for a senior software engineer, join us as partner!'
                         }).
-                        when('/jobs/E0001', {
-                            templateUrl: 'pages/jobs/job_E0001.html'
-                          }).
                         otherwise({
                           redirectTo: '/products'
                         });
                     }]);
+
+wheregoHomeApp.run(['$location', '$rootScope', function($location, $rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+        $rootScope.title = current.$$route.title;
+    });
+}]);
