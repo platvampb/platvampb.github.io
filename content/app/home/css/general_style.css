@@ -45,7 +45,7 @@ img.main_banner {
 	text-align: center;
 	position:relative;
 	margin: auto;
-	width: 90%;
+	width: 92%;
 }
 
 body {
@@ -145,8 +145,8 @@ ul.square {
 }
 
 div.content_container {
-	margin-left:12%;
-	margin-right:12%
+	margin-left:10%;
+	margin-right:10%
 }
 
 a.link_without_underline {
