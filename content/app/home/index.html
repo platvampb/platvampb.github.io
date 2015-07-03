@@ -1,0 +1,63 @@
+﻿<!doctype html>
+<html lang="en-CA" ng-app="HomeApp">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Wherego Home</title>
+  <link rel="stylesheet" href="css/general_style.css">
+  <script src="js/jquery/jquery-2.1.4.min.js"></script>
+  <script src="js/angular_core/angular.min.v.1.2.16.js"></script>
+  <script src="js/angular_core/angular-resource.min.v.1.2.16.js"></script>
+  <script src="js/angular_core/angular-route.min.v.1.2.16.js"></script>
+  <script src="js/angular_core/angular-cookies.min.v.1.2.16.js"></script>
+  <script src="js/home_apps.js"></script>
+  <script src="js/home_controllers.js"></script>
+  <script src="js/home_services.js"></script>
+  
+  <!-- the following script is for goolge analytic -->
+  <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	  ga('create', 'UA-59096811-1', 'auto');
+	  ga('send', 'pageview');
+  </script>
+  <script>
+	$(document).ready(function(){
+	    $("read_more_E0001").click(function(){
+	        $("more_E0001").toggle();
+	    });
+	});
+  </script>
+</head>
+
+<body ng-controller="WGHomeLanCtrl" class="text_font">
+	<div class="center">
+		<section>
+			<div class="right_margin header_font">
+				<ul class="header_ul_list">
+					<li id="id_aboutus" class="header_list_end"><a href="#aboutus" class="link_without_underline">Contact Us</a></li>
+					<li id="id_jobs" class="header_list"><a href="#jobs" class="link_without_underline">Jobs</a></li>
+					<li id="id_products" class="header_list"><a href="#products" class="link_without_underline">Products</a></li>
+					<li id="id_home" class="header_list"><a href="#products" class="link_without_underline">Home</a></li>
+				</ul>
+			</div>
+		</section>
+		<section>
+			<div>
+				<img id="id_main_banner" class="main_banner" src="img/logo/opaque_logo/WG_Logo_opaque_inverted.png">
+			</div>
+		</section>
+		<section>
+			<div ng-view="">
+			</div>
+		</section>
+		<section>
+			<div ng-controller="metaCrl">
+				</br>
+				<li class="footer_list"><p id="id_footer" style="text-align:right;margin-right:5%">{{metadata.meta_version}}</p></li>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
