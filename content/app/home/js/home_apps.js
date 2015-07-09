@@ -16,9 +16,9 @@ wheregoHomeApp.config(['$routeProvider',
                             templateUrl: 'pages/products.html',
                             title:'wherego products'
                           }).
-                        when('/jobs', {
-                        	templateUrl: 'pages/jobs.html',
-                        	title:'looking for a senior software engineer, join us as partner!'
+                        when('/career', {
+                        	templateUrl: 'pages/career.html',
+                        	title:'looking for a senior software engineer - join us as partner!'
                         }).
                         otherwise({
                           redirectTo: '/products'
