@@ -1,5 +1,21 @@
+.form-invite input::-webkit-input-placeholder {
+   color: rgba(255, 255, 255, 0.8); 
+}
+
+.form-invite input:-moz-placeholder { /* Firefox 18- */
+   color: rgba(255, 255, 255, 0.8); 
+}
+
+.form-invite input::-moz-placeholder {  /* Firefox 19+ */
+   color: rgba(255, 255, 255, 0.8); 
+}
+
+.form-invite input:-ms-input-placeholder {  
+   color: rgba(255, 255, 255, 0.8); 
+}
+
 .text_font {
-	font-family: "LatoRegular", Lato,sans-serif;
+	font-family: "Open Sans",Arial,sans-serif;
 	text-decoration:none;
 	color: black;
 	font-size: 17px;
@@ -7,14 +23,14 @@
 }
 
 .text_font_large {
-	font-family: "LatoRegular", Lato,sans-serif;
+	font-family: "Open Sans",Arial,sans-serif;
 	text-decoration:none;
 	color: black;
 	font-size: 20px;
 }
 
 .text_font_small {
-	font-family: "LatoRegular", Lato,sans-serif;
+	font-family: "Open Sans",Arial,sans-serif;
 	text-decoration:none;
 	color: black;
 	font-size: 12px;
@@ -33,7 +49,7 @@
 }
 
 body.text_font {
-	font-family: "LatoRegular", Lato,sans-serif;
+	font-family: "Open Sans",Arial,sans-serif;
 	color: black;
 }
 
@@ -53,6 +69,9 @@ body {
 	margin: 0;
 }
 
+.header {
+	padding: 20px;
+}
 div.right_margin {
 	text-align: right;
 	margin: 1%;
@@ -62,15 +81,8 @@ div.left_margin {
 	text-align: left;
 }
 
-div.header_font {
-	font-family: "LatoRegular", Lato,sans-serif;
-	font-size: 15px;
-	color:black;
-	padding: 5px 8px;
-}
-
 a.text_center {
-	font-family: "LatoRegular", Lato,sans-serif;
+	font-family: "Open Sans", "LatoRegular", Lato,sans-serif;
 	text-decoration:none;
 	color: white;
 	font-size: 23px;
@@ -131,6 +143,37 @@ li.header_list_end {
 ul.header_ul_list {
 	margin-top: 0px;
 	margin-bottom: 30px;
+	font-family: inherit;
+	font-size: 18px;
+	padding: 5px 8px;
+}
+
+.header a, .header a:hover{
+	color: white;
+	text-decoration: none;
+}
+
+.header_content {
+	position: absolute;
+	top: 25%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	left: 0;
+	min-height: 120px;
+	padding-bottom: 15px;
+}
+
+.header_content h3 {
+	font-family: "Open Sans",Arial,sans-serif;
+	font-size: 32px;
+	position: relative;
+}
+
+.header_content h2 {
+	letter-spacing: 0.08em;
+	font-family: "Poiret One", "Open Sans",Arial,sans-serif;
+	font-size: 50px;
+	position: relative;
 }
 
 li.footer_list {
@@ -151,7 +194,6 @@ div.content_container {
 
 a.link_without_underline {
 	text-decoration: none;
-	color:black;
 }
 
 label.format {
@@ -181,4 +223,59 @@ input.border_black {
 
 button.job_readmore {
 	background-image:url("../img/button_white.jpg");
+}
+
+.header {
+	height:580px;
+	min-height: 510px;
+	background-image:url("../img/sea-sky-beach-holiday.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	position: relative;
+	color: white;
+}
+
+.form-invite .btn-lg {
+}
+
+.btn {
+  -webkit-font-smoothing: antialiased;
+}
+
+.invite_container {
+	margin-top: 25px;
+}
+
+.form-invite {
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+.form-invite input {
+	min-width: 270px;
+	border-color: rgba(255, 255, 255, 0.6);
+	border: 2px solid #cdcdcd;
+	background: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	display: block;
+	height: 50px;
+	padding: 8px 20px;
+	line-height: 1.42857;
+	border-radius: 3px;
+	font-size: 18px;
+	margin-right: 6px;
+}
+
+.form-invite .btn {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	vertical-align: top;
+	padding: 14px 24px;
+	font-size: 16px;
+	line-height: 1.25;
+	border-radius: 3px;
+	font-weight: bold;
 }

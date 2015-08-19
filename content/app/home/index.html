@@ -1,10 +1,10 @@
-﻿<!doctype html>
-<html lang="en-CA" ng-app="HomeApp">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title ng-bind="title"></title>
-  <link rel="stylesheet" href="css/general_style.css">
-  <script src="js/jquery/jquery-2.1.4.min.js"></script>
+﻿<html lang="en-CA" ng-app="HomeApp" class="ng-scope"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title ng-bind="title" class="ng-binding">wherego products</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Poiret+One|Open+Sans:300&amp;subset=latin,greek" rel="stylesheet" type="text/css">
+  <script async="" src="//www.google-analytics.com/analytics.js"></script><script src="js/jquery/jquery-2.1.4.min.js"></script>
   <script src="js/angular_core/angular.min.v.1.2.16.js"></script>
   <script src="js/angular_core/angular-resource.min.v.1.2.16.js"></script>
   <script src="js/angular_core/angular-route.min.v.1.2.16.js"></script>
@@ -31,30 +31,40 @@
   </script>
 </head>
 
-<body ng-controller="WGHomeLanCtrl" class="text_font">
+<body ng-controller="WGHomeLanCtrl" class="text_font ng-scope">
+	<!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+	<![endif]-->
 	<div class="center">
-		<section>
-			<div class="right_margin header_font">
-				<ul class="header_ul_list">
-					<li id="id_aboutus" class="header_list_end"><a href="#aboutus" class="link_without_underline">about us</a></li>
-					<li id="id_jobs" class="header_list"><a href="#career" class="link_without_underline">career</a></li>
-					<li id="id_products" class="header_list"><a href="#products" class="link_without_underline">products</a></li>
-					<li id="id_home" class="header_list"><a href="#products" class="link_without_underline">home</a></li>
-				</ul>
+		<section class="header">
+			<div class="container">
+			<ul class="header_ul_list">
+				<li id="id_aboutus" class="header_list_end"><a href="#aboutus">about us</a></li>
+				<li id="id_jobs" class="header_list"><a href="#career">career</a></li>
+				<li id="id_products" class="header_list"><a href="#products">products</a></li>
+				<li id="id_home" class="header_list"><a href="#products">home</a></li>
+			</ul>
+
+			<div class="header_content">
+				<h2>YOU ARE THERE</h2>
+				<h3>From inspiration to organization, Wherego gets you on your way</h3>
+				<div class="invite_container">
+					<p>We are working hard to bring an amazing product to you</p>
+					<form name="InviteForm" novalidate="novalidate" ng-submit="" ng-class="" class="form-inline form-invite ng-pristine ng-valid">
+					       <input type="email" name="email" ng-model="" placeholder="email@address.com" class="form-control form-control-dark" required="" h-focusable="">
+						<button class="btn btn-info btn-lg">Keep me posted</button>
+					</form>
+				</div>
+			</div>
 			</div>
 		</section>
 		<section>
-			<div>
-				<img id="id_main_banner" class="main_banner" src="img/logo/opaque_logo/WG_Logo_opaque_inverted.png">
-			</div>
+			<!-- ngView:  -->
 		</section>
+
 		<section>
-			<div ng-view="">
-			</div>
-		</section>
-		<section>
-			<div ng-controller="metaCrl">
-				</br>
+			<div ng-controller="metaCrl" class="ng-scope">
+				<br>
 				<li class="footer_list"><p id="id_footer" style="text-align:right;margin-right:5%">{{metadata.meta_version}}</p></li>
 			</div>
 		</section>
