@@ -1,17 +1,17 @@
 .form-invite input::-webkit-input-placeholder {
-   color: rgba(255, 255, 255, 0.8); 
+   color: rgba(255, 255, 255, 0.6); 
 }
 
 .form-invite input:-moz-placeholder { /* Firefox 18- */
-   color: rgba(255, 255, 255, 0.8); 
+   color: rgba(255, 255, 255, 0.6); 
 }
 
 .form-invite input::-moz-placeholder {  /* Firefox 19+ */
-   color: rgba(255, 255, 255, 0.8); 
+   color: rgba(255, 255, 255, 0.6); 
 }
 
 .form-invite input:-ms-input-placeholder {  
-   color: rgba(255, 255, 255, 0.8); 
+   color: rgba(255, 255, 255, 0.6); 
 }
 
 .text_font {
@@ -125,30 +125,32 @@ a.button_white_background {
 li.header_list {
 	float:right;
 	overflow: hidden;
-	padding-right: 15px;
-	link:black;
-	vlink: black;
-	alink: #848484; /*grey*/
+	margin-right: 20px;
 }
 
 li.header_list_end {
 	padding-right: 5px;
 	float:right;
 	overflow: hidden;
-	link:black;
-	vlink: black;
-	alink: #848484; /*grey*/
 }
 
 ul.header_ul_list {
-	margin-top: 0px;
-	margin-bottom: 30px;
 	font-family: inherit;
 	font-size: 18px;
 	padding: 5px 8px;
+	margin-top: 28px;
 }
 
-.header a, .header a:hover{
+.nav {
+	margin-top: 15px;
+}
+
+.header a {
+	color: white;
+	text-decoration: none;
+}
+
+.header a:visited, .header a:hover, .header a:active, .header a:focus {
 	color: white;
 	text-decoration: none;
 }
@@ -221,6 +223,20 @@ input.border_black {
 	color:black;
 }
 
+input.border_white {
+	border-color: rgba(255, 255, 255, 0.6);
+	border: 2px solid #cdcdcd;
+	border-radius: 3px;
+}
+
+input.border_white:focus, input.border_white:hover {
+	border-color: white;
+	border: 2px solid #cdcdcd;
+	border-radius: 3px;
+	box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+
 button.job_readmore {
 	background-image:url("../img/button_white.jpg");
 }
@@ -235,9 +251,6 @@ button.job_readmore {
 	background-attachment: fixed;
 	position: relative;
 	color: white;
-}
-
-.form-invite .btn-lg {
 }
 
 .btn {
@@ -255,8 +268,6 @@ button.job_readmore {
 
 .form-invite input {
 	min-width: 270px;
-	border-color: rgba(255, 255, 255, 0.6);
-	border: 2px solid #cdcdcd;
 	background: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -264,18 +275,26 @@ button.job_readmore {
 	height: 50px;
 	padding: 8px 20px;
 	line-height: 1.42857;
-	border-radius: 3px;
 	font-size: 18px;
 	margin-right: 6px;
+	color: white;
 }
 
 .form-invite .btn {
 	padding-top: 15px;
 	padding-bottom: 15px;
 	vertical-align: top;
-	padding: 14px 24px;
-	font-size: 16px;
-	line-height: 1.25;
+	padding: 12px 24px;
+	font-size: 18px;
+	line-height: 1.34;
 	border-radius: 3px;
 	font-weight: bold;
+}
+
+.logo {
+	float: left;
+}
+
+.logo img{
+	height: 60px;
 }
