@@ -1,5 +1,5 @@
 .text_font {
-	font-family: "LatoRegular", Lato,sans-serif;
+	font-family: LatoRegular, Lato,sans-serif;
 	text-decoration:none;
 	color: black;
 	font-size: 17px;
@@ -7,14 +7,14 @@
 }
 
 .text_font_large {
-	font-family: "LatoRegular", Lato,sans-serif;
+	font-family: LatoRegular, Lato,sans-serif;
 	text-decoration:none;
 	color: black;
 	font-size: 20px;
 }
 
 .text_font_small {
-	font-family: "LatoRegular", Lato,sans-serif;
+	font-family: LatoRegular, Lato,sans-serif;
 	text-decoration:none;
 	color: black;
 	font-size: 12px;
@@ -29,7 +29,7 @@
 }
 
 .align_central {
-	style="margin: 0 auto;"
+	style:margin: 0 auto;
 }
 
 body.text_font {
@@ -162,7 +162,7 @@ label.format {
 
 table {
     table-layout: fixed;
-  	width: 100%;
+    margin: 0 auto;
 }
 
 td {
