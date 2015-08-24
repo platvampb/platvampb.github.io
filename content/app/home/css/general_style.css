@@ -1,3 +1,24 @@
+table {
+    table-layout: fixed;
+    margin: 0 auto;
+    width: 80%;
+    border-spacing: 50px 0px;
+}
+
+td {
+    word-wrap:break-word;
+    vertical-align: text-top;
+}
+
+body {
+	color: white;
+	margin: 0;
+}
+
+p {
+	text-align: justify;
+}
+
 .text_font {
 	font-family: LatoRegular, Lato,sans-serif;
 	text-decoration:none;
@@ -46,11 +67,6 @@ img.main_banner {
 	position:relative;
 	margin: auto;
 	width: 92%;
-}
-
-body {
-	color: white;
-	margin: 0;
 }
 
 div.right_margin {
@@ -160,13 +176,9 @@ label.format {
 	font-size:15px;
 }
 
-table {
-    table-layout: fixed;
-    margin: 0 auto;
-}
-
-td {
-    word-wrap:break-word;
+table.central {
+	margin-left: 10%;
+	margin-right: 10%
 }
 
 textarea.border_black {
