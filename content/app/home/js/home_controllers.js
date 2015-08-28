@@ -5,7 +5,7 @@ function readCookie(name) {
 var HomeControllers = angular.module('HomeControllers', []);
 
 HomeControllers.controller('WGHomeLanCtrl', function($scope, $http) {
-	
+
 	$http.get("lan/lan_en.json").success(function(data) {
 		$scope.text = data;
 		if (Math.floor((Math.random() * 10) + 1)%2==0)
@@ -17,6 +17,14 @@ HomeControllers.controller('WGHomeLanCtrl', function($scope, $http) {
 			$scope.urlToPick = $scope.text.url_share_survey;
 		}
 	});
+
+  $scope.moveToSubscribe = function () {
+    $('body').animate({
+      scrollTop: 0
+    }, 500);
+
+    $('input[name=email]').focus();
+  };
 });
 
 
