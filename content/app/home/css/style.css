@@ -130,20 +130,21 @@ ul.header-ul-list {
 	font-family: inherit;
 	font-size: 18px;
 	padding: 5px 8px;
-	margin-top: 28px;
+	margin-top: 24px;
+  float: right;
 }
 
-.header a {
+.banner a {
 	color: white;
 	text-decoration: none;
 }
 
-.header a:visited, .header a:hover, .header a:active, .header a:focus {
+.banner a:visited, .banner a:hover, .banner a:active, .banner a:focus {
 	color: white;
 	text-decoration: none;
 }
 
-.header-content {
+.banner-content {
 	position: absolute;
 	top: 25%;
 	width: 100%;
@@ -153,13 +154,13 @@ ul.header-ul-list {
 	padding-bottom: 15px;
 }
 
-.header-content h3 {
+.banner-content h3 {
 	font-family: "Open Sans",Arial,sans-serif;
 	font-size: 32px;
 	position: relative;
 }
 
-.header-content h2 {
+.banner-content h2 {
 	letter-spacing: 0.08em;
 	font-family: "Poiret One", "Open Sans",Arial,sans-serif;
 	position: relative;
@@ -210,8 +211,47 @@ button.job_readmore {
 .btn {
   -webkit-font-smoothing: antialiased;
 }
+
+/* nav section */
+.header .container {
+  position: relative;
+}
+
+.nav {
+	padding-top: 35px;
+  background-color: transparent;
+  width: 100%;
+}
+
+.nav-inverse {
+  position: absolute;
+}
+
+.nav a {
+	color: #66aecc;
+	text-decoration: none;
+}
+
+.nav a:visited,
+.nav a:hover,
+.nav a:active,
+.nav a:focus {
+	text-decoration: none;
+}
+
+.nav-inverse a {
+	color: white;
+}
+
+.nav-inverse a:visited,
+.nav-inverse a:hover,
+.nav-inverse a:active,
+.nav-inverse a:focus {
+	color: #d9534f;
+}
+
 /* header section related styling */
-.header {
+.banner {
 	height:580px;
 	min-height: 510px;
 	background-image:url("../img/assets/sea-sky-beach-holiday.jpg");
@@ -219,7 +259,6 @@ button.job_readmore {
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
-	position: relative;
 	padding: 20px;
   color: white;
 }
@@ -292,8 +331,8 @@ ul.horizontal {
 section.products {
 	height:580px;
   position: relative;
-  padding-top: 85px;
-  padding-bottom: 85px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 	background-image:url("../img/assets/mid-section.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -340,7 +379,7 @@ section.products {
 /*Notify me section*/
 
 .keep-me-posted {
-  padding-top: 85px;
+  padding-top: 80px;
   height: 420px;
   background-color: #f4f4f4;
   position: relative;

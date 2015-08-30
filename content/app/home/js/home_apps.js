@@ -15,7 +15,8 @@ wheregoHomeApp.config(['$routeProvider',
       }).
       when('/products', {
           templateUrl: 'pages/products.html',
-          title:'wherego products'
+          title:'wherego products',
+          navClass: 'nav-inverse'
         }).
       when('/career', {
       	templateUrl: 'pages/career.html',
@@ -29,5 +30,6 @@ wheregoHomeApp.config(['$routeProvider',
 wheregoHomeApp.run(['$location', '$rootScope', function($location, $rootScope) {
     $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
         $rootScope.title = current.$$route.title;
+        $rootScope.navClass = current.$$route.navClass;
     });
 }]);
