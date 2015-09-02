@@ -2,6 +2,7 @@ var wheregoHomeApp = angular.module('HomeApp',
   [
     'ngRoute',
     'ngCookies',
+    'ngMessages',
     'HomeControllers',
     'metadataControllers'
   ]);

@@ -5,10 +5,7 @@
 				<h3>From inspiration to organization, Wherego gets you on your way</h3>
 				<div class="invite-container">
 					<p>We are working hard to bring an amazing product to you</p>
-					<form name="inviteForm" novalidate="novalidate" class="form-inline form-invite ng-pristine ng-valid margin-top-15">
-            <input type="email" name="email" placeholder="email@address.com" class="form-control border-white" required="" h-focusable="">
-    				<button class="btn btn-danger btn-lg">Keep me posted</button>
-					</form>
+					<div class="margin-top-10"><button class="btn btn-danger btn-lg" ng-click="moveToSubscribe()">Keep me posted!</button></div>
 				</div>
 			</div>
 		</div>
@@ -68,7 +65,16 @@
   	<div class="container clearfix">
       <h2 class="lg-header">Keep me posted!</h2>
       <p class="margin-bottom-20">Receive updates, voice your opinion and get beta invitation by subscribing.</p>
-			<div class="margin-top-10"><button class="btn btn-info btn-lg" ng-click="moveToSubscribe()">Subscribe</button></div>
+				<form name="inviteForm" novalidate="novalidate" ng-submit="submitForm(inviteForm.$valid)" class="form-inline form-invite ng-pristine ng-valid margin-top-15"
+				ng-class="{ 'has-error': inviteForm.email.$invalid && submitted}">
+          <input type="email" name="email" placeholder="email@address.com" class="form-control border-white" required
+						ng-model="user.email"
+						ng-pattern="/^.{1,}@[_a-z0-9A-Z]+(\.[a-z0-9A-Z]+)+$/">
+  				<button type="submit" class="btn btn-danger btn-lg">Subscribe</button>
+					<div ng-messages="inviteForm.email.$error" ng-if="submitted" class="help-block">
+						<p ng-message="email pattern">Please enter a valid email.</p>
+					</div>
+				</form>
     </div>
 
 		<div ng-controller="metaCrl">

@@ -18,9 +18,16 @@ HomeControllers.controller('WGHomeLanCtrl', function($scope, $http) {
 		}
 	});
 
+  $scope.submitForm = function(isValid) {
+    $scope.submitted = true;
+    if (isValid) {
+      alert('our form is amazing');
+    }
+  };
+
   $scope.moveToSubscribe = function () {
     $('body').animate({
-      scrollTop: 0
+      scrollTop: $('.keep-me-posted').offset().top
     }, 500);
 
     $('input[name=email]').focus();
