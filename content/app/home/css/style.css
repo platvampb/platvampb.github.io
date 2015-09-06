@@ -419,3 +419,31 @@ button {
   right: 0px;
   width: 100%;
 }
+
+/*career section*/
+
+.jobs-banner {
+	background-color: #66aecc;
+}
+
+.jobs-banner a {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 30px;
+	margin-left: 1em;
+}
+
+.jobs-banner a:hover {
+	color: rgba(255, 255, 255, 0.9);
+	text-decoration: none;
+}
+
+.jobs-content {
+	padding-top: 45px;
+	min-height: 240px;
+}
+
+p.fa-container-sm {
+	margin: 0;
+	font-size: 18px;
+	text-align: center;
+}

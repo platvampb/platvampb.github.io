@@ -1,33 +1,18 @@
-<script type="text/javascript">
-	function toggle_visibility(target_id, source_id) {
-    	var target_element = document.getElementById(target_id);
-       	var source_element = document.getElementById(source_id);
-       	if(target_element.style.display == 'block') {
-    		target_element.style.display = 'none';
-       	   	source_element.innerHTML = "read more";
-       	}
-       	else {
-    	   	target_element.style.display = 'block';
-   	   		source_element.innerHTML = "read less";
-       	}
-    }
-</script>
-<div>
-	<p class="right_margin">
-		<div class="content_container">
-			<!-- <iframe src="js/pdfjs-1.1.114-dist/web/viewer.html?file=E0001.pdf" style="width:100%; height:1000px;" frameborder="0"></iframe> -->
-			<br/><br/>
-			<h2>senior software engineer(Full stack) - e#0001</h2>
-			<h4 align="left">we are looking for a technology partner that can develop and evolve our applications through web services. the partner will have the opportunity to participate in the process of building a team and a product.</h4>
-			<h4 align="left">We are currently looking to expand our engineering team by recruiting a technical partner. equity will be granted based on a mutual agreement. You will be working part-time at this moment, but full-time commitment may be required later.</h4>
-			<h4 align="left">we in general are looking for experience and PASSION!</h4><br/>
-			
-			<div id="more_E0001" style="display:none"  class="text_left">
-				<p>
-					<h3>our values: <br/><br/>
-					<a class="link_without_underline button_white_background" ng-href="#aboutus">humor, teamwork, knowledge sharing, honesty, trailblazer</a></h3>
-					<br/>
-					<h3>job responsibility</h3>
+<section class="slim-banner jobs-banner">
+	<div class="container-fluid banner-content">
+		<h1 class="lg-header">Join Us</h1>
+		<h2 class="opaque-white margin-bottom-20">Help us build the next generation travel platform</h2>
+		<a href="#aboutus">Meet the team <i class="fa fa-angle-double-right"></i></a>
+	</div>
+</section>
+<section class="jobs-content">
+	<div class="container" ng-controller="careerAccordionCtrl">
+		<!-- <iframe src="js/pdfjs-1.1.114-dist/web/viewer.html?file=E0001.pdf" style="width:100%; height:1000px;" frameborder="0"></iframe> -->
+		<h2 class="margin-bottom-20">Open Positions:</h2>
+		<accordion close-others="oneAtATime" class="col-md-8 col-md-offset-2 margin-top-15">
+			<accordion-group template-url="group-template.html" heading="senior software engineer(Full stack) - e#0001">
+				<div id="more_E0001" class="text_left">
+					<h4>job responsibility</h4>
 					<p>This person is joining our team as a technical partner. Their day-to-day work includes:</p>
 					<ul class="square">
 						<li>Working with Co-founder, Technology & Product to setup the full stack of our software;</li>
@@ -36,7 +21,7 @@
 						<li>Acting as technical lead of the development team;</li>
 						<li>Participating in the agile development process.</li>
 					</ul>
-					<h3>qualifications</h3>
+					<h4>qualifications</h4>
 					<p>as a senior software engineer in the team, the skill and knowledge set we are looking for:</p>
 					<ul>
 						<li>3+ years web development experience;</li>
@@ -57,7 +42,7 @@
 						<li>person that is a knowledge giver, and also is eager to learn;</li>
 						<li>creative and curious problem solver that loves challenging development projects.</li>
 					</ul>
-					<h3>we offer</h3>
+					<h4>we offer</h4>
 					<p>as an early-stage partner, you will:</p>
 					<ul>
 						<li>learn everything we have learned so far, as we will keep everything transparent to our partners and are willing to share all courses; (teamwork and honesty are our culture!)</li>
@@ -66,15 +51,31 @@
 						<li>have the opportunity to develop into a role that incorporates greater responsibilities in the team;</li>
 						<li>experience the startup fun & excitement!</li>
 					</ul>
-				</p>
-			</div>
-			<a id="read_more_E0001" onclick="toggle_visibility('more_E0001', 'read_more_E0001')" class="text_center_readmore button_white_background">read more</a>
-			<br/>
-			<br/>
-			<p>to apply, please send your resume to <b>haoyang.liang@wewherego.com</b> ! Put <b>E#0001</b> in the email title.</p>
-			<br/>
-			<br/>
-			<h1 align="right"><a ng-href="#aboutus" class="text_center button_background">who we are</a></h1>
-		</div>
-	</p>
-</div>
+					<h4>appy</h4>
+					<p>please send your resume to <b>haoyang.liang@wewherego.com</b> ! Put <b>E#0001</b> in the email title.</p>
+				</div>
+			</accordion-group>
+		</accordion>
+
+		<script type="text/ng-template" id="group-template.html">
+	    <div class="panel {{panelClass || 'panel-default'}} text-left">
+	      <div class="panel-heading">
+	        <h4 class="panel-title">
+	          <div tabindex="0" class="accordion-toggle paragraph-header clickable" ng-click="toggleOpen()" accordion-transclude="heading">
+							{{heading}}
+							<i class="pull-right fa" ng-class="{'fa-chevron-down': isOpen, 'fa-chevron-right': !isOpen}"></i>
+						</div>
+	        </h4>
+	      </div>
+	      <div class="panel-collapse collapse" collapse="!isOpen">
+	        <div class="panel-body" style="text-align: right" ng-transclude></div>
+	      </div>
+	      <div class="panel-collapse panel-footer" collapse="!isOpen">
+	          <p class="accordion-toggle fa-container-sm clickable" ng-click="toggleOpen()">
+							<i class="fa fa-chevron-up"></i>
+						</p>
+	      </div>
+	    </div>
+	  </script>
+	</div>
+</section>

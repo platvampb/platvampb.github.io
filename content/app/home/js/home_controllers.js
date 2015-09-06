@@ -4,19 +4,7 @@ function readCookie(name) {
 
 var HomeControllers = angular.module('HomeControllers', []);
 
-HomeControllers.controller('WGHomeLanCtrl', function($scope, $http) {
-
-	$http.get("lan/lan_en.json").success(function(data) {
-		$scope.text = data;
-		if (Math.floor((Math.random() * 10) + 1)%2==0)
-	  	{
-			$scope.urlToPick = $scope.text.url_card_survey;
-		}
-		else
-		{
-			$scope.urlToPick = $scope.text.url_share_survey;
-		}
-	});
+HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.submitForm = function(isValid) {
     $scope.submitted = true;
@@ -26,14 +14,13 @@ HomeControllers.controller('WGHomeLanCtrl', function($scope, $http) {
   };
 
   $scope.moveToSubscribe = function () {
-    $('body').animate({
-      scrollTop: $('.keep-me-posted').offset().top
+    angular.element(('body')).animate({
+      scrollTop: angular.element('.keep-me-posted').offset().top
     }, 500);
 
-    $('input[name=email]').focus();
+    angular.element('input[name=email]').focus();
   };
-});
-
+}]);
 
 var metadataControllers = angular.module('metadataControllers', []);
 
