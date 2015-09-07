@@ -10,6 +10,11 @@ a.inverse-link {
 	color: white;
 }
 
+.orange-text {
+	color: #d9534f;
+}
+
+a.orange-link,
 a.inverse-link:hover,
 a.inverse-link:active,
 a.inverse-link:focus {
@@ -37,6 +42,10 @@ a.inverse-link:focus {
 
 .gray-bg {
   background-color: #f4f4f4;
+}
+
+.blue-bg {
+  background-color: #66ae33;
 }
 
 .opaque-white {
@@ -244,7 +253,7 @@ button.job_readmore {
 }
 
 .nav a {
-	color: #66aecc;
+	color: #d9534f;
 	text-decoration: none;
 }
 
@@ -252,17 +261,18 @@ button.job_readmore {
 .nav a:hover,
 .nav a:active,
 .nav a:focus {
+	color: #66aecc;
 	text-decoration: none;
 }
 
 .nav-inverse a {
-	color: white;
+	color: #d9534f;
 }
 
 .nav-inverse a:hover,
 .nav-inverse a:active,
 .nav-inverse a:focus {
-	color: #d9534f;
+	color: white;
 }
 
 /* header section related styling */
@@ -446,4 +456,21 @@ p.fa-container-sm {
 	margin: 0;
 	font-size: 18px;
 	text-align: center;
+}
+
+.panel-group .panel {
+	border: 1px solid #333;
+}
+
+.panel-group .panel-default > .panel-heading, .panel-default .panel-footer {
+	background-color: transparent;
+	color: #66aecc;
+}
+
+.panel-title {
+	font-weight: bold;
+}
+
+.jobs-content .container {
+	background-color: white;
 }

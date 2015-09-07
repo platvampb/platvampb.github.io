@@ -2,14 +2,14 @@
 	<div class="container-fluid banner-content">
 		<h1 class="lg-header">Join Us</h1>
 		<h2 class="opaque-white margin-bottom-20">Help us build the next generation travel platform</h2>
-		<a href="#aboutus">Meet the team <i class="fa fa-angle-double-right"></i></a>
+		<a href="#aboutus">Meet the team <i class="fa fa-angle-double-right orange-text"></i></a>
 	</div>
 </section>
 <section class="jobs-content">
 	<div class="container" ng-controller="careerAccordionCtrl">
 		<!-- <iframe src="js/pdfjs-1.1.114-dist/web/viewer.html?file=E0001.pdf" style="width:100%; height:1000px;" frameborder="0"></iframe> -->
-		<h2 class="margin-bottom-20">Open Positions:</h2>
-		<accordion close-others="oneAtATime" class="col-md-8 col-md-offset-2 margin-top-15">
+		<h2 class="margin-bottom-20">Open Positions</h2>
+		<accordion close-others="oneAtATime" class="col-xs-12 col-sm-8 col-sm-offset-2 margin-top-15 padding-top-15">
 			<accordion-group template-url="group-template.html" heading="senior software engineer(Full stack) - e#0001">
 				<div id="more_E0001" class="text_left">
 					<h4>job responsibility</h4>
@@ -51,7 +51,7 @@
 						<li>have the opportunity to develop into a role that incorporates greater responsibilities in the team;</li>
 						<li>experience the startup fun & excitement!</li>
 					</ul>
-					<h4>appy</h4>
+					<h4>apply</h4>
 					<p>please send your resume to <b>haoyang.liang@wewherego.com</b> ! Put <b>E#0001</b> in the email title.</p>
 				</div>
 			</accordion-group>
@@ -63,7 +63,7 @@
 	        <h4 class="panel-title">
 	          <div tabindex="0" class="accordion-toggle paragraph-header clickable" ng-click="toggleOpen()" accordion-transclude="heading">
 							{{heading}}
-							<i class="pull-right fa" ng-class="{'fa-chevron-down': isOpen, 'fa-chevron-right': !isOpen}"></i>
+							<i class="pull-right fa orange-text" ng-class="{'fa-minus': isOpen, 'fa-plus': !isOpen}"></i>
 						</div>
 	        </h4>
 	      </div>
@@ -72,7 +72,7 @@
 	      </div>
 	      <div class="panel-collapse panel-footer" collapse="!isOpen">
 	          <p class="accordion-toggle fa-container-sm clickable" ng-click="toggleOpen()">
-							<i class="fa fa-chevron-up"></i>
+							<i class="fa fa-chevron-up orange-text"></i>
 						</p>
 	      </div>
 	    </div>
