@@ -1,38 +1,38 @@
 function readCookie(name) {
-    return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
+		return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
 }
 
 var HomeControllers = angular.module('HomeControllers', []);
 
-HomeControllers.controller('WGHomeLanCtrl', function($scope, $http) {
+HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', 'subscribeService', function($scope, $http, subscribeService) {
 
-	$http.get("lan/lan_en.json").success(function(data) {
-		$scope.text = data;
-		if (Math.floor((Math.random() * 10) + 1)%2==0)
-	  	{
-			$scope.urlToPick = $scope.text.url_card_survey;
+	$scope.submitted = false;
+	$scope.result = {};
+	$scope.user = {};
+
+	$scope.submitForm = function(isValid) {
+
+		$scope.submitted = true;
+
+		if (isValid) {
+			subscribeService.submit($scope.user.email).
+				then (function(response) {
+					$scope.result.success = true;
+				}, function(response) {
+					$scope.result.success = true;
+					//$scope.result = response;
+				});
 		}
-		else
-		{
-			$scope.urlToPick = $scope.text.url_share_survey;
-		}
-	});
+	};
 
-  $scope.submitForm = function(isValid) {
-    $scope.submitted = true;
-    if (isValid) {
-      alert('our form is amazing');
-    }
-  };
+	$scope.moveToSubscribe = function () {
+		$('body').animate({
+			scrollTop: $('.keep-me-posted').offset().top
+		}, 500);
 
-  $scope.moveToSubscribe = function () {
-    $('body').animate({
-      scrollTop: $('.keep-me-posted').offset().top
-    }, 500);
-
-    $('input[name=email]').focus();
-  };
-});
+		$('input[name=email]').focus();
+	};
+}]);
 
 
 var metadataControllers = angular.module('metadataControllers', []);
