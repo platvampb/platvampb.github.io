@@ -10,19 +10,30 @@ HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', 'subscribeServic
 	$scope.result = {};
 	$scope.user = {};
 
-	$scope.submitForm = function(isValid) {
+	$scope.submitForm = function(isValid, inviteForm) {
 
 		$scope.submitted = true;
 
 		if (isValid) {
 			subscribeService.submit($scope.user.email).
 				then (function(response) {
-					$scope.result.success = true;
+					var data = response.data;
+					if (data.result === true) {
+						$scope.result.success = true;
+					} else if (data.message == "SequelizeUniqueConstraintError") {
+						$scope.result.exists = true;
+					} else {
+						inviteForm.email.$setValidity('email', false);
+					}
 				}, function(response) {
-					$scope.result.success = true;
-					//$scope.result = response;
+					$scope.result.serverError = true;
 				});
 		}
+	};
+
+	$scope.validate = function (field, inviteForm) {
+		inviteForm[field].$validate();
+		$scope.result.serverError = false;
 	};
 
 	$scope.moveToSubscribe = function () {

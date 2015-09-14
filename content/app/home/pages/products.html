@@ -66,18 +66,19 @@
 			<h2 class="lg-header">Keep me posted!</h2>
 			<p class="paragraph-header">Receive updates, voice your opinion and get beta invitation by subscribing.</p>
 			<div class="invite-form-container">
-				<form name="inviteForm" novalidate="novalidate" ng-submit="submitForm(inviteForm.$valid)" class="form-invite ng-pristine ng-valid margin-top-15"
+				<form name="inviteForm" novalidate="novalidate" ng-submit="submitForm(inviteForm.$valid, inviteForm)" class="form-invite ng-pristine ng-valid margin-top-15"
 				ng-class="{ 'has-error': inviteForm.email.$invalid && submitted}">
 					<div ng-messages="result" ng-if="submitted" class="help-block form-response">
-						<span ng-message="success">Your email {{user.email}} has been successfully subscribed!</span>
-						<span ng-message="exists">Looks like your email {{user.email}} has already subscribed!</span>
+						<span ng-message="success">You have successfully subscribed with email {{user.email}}!</span>
+						<span ng-message="exists">You are already subscribed with email {{user.email}}!</span>
 					</div>
-					<div class="row margin-top-10">
+					<div class="row margin-top-10" ng-show="!result.success && !result.exists">
 						<div class="form-group col-sm-12" ng-class="{ 'has-error': inviteForm.email.$invalid && submitted}">
 							<input type="email" name="email" placeholder="email@address.com" class="border-white email form-control"
 								required
-								ng-model="user.email"
-								ng-pattern="/^.{1,}@[_a-z0-9A-Z]+(\.[a-z0-9A-Z]+)+$/">
+								ng-change="validate('email', inviteForm)"
+								ng-model="user.email">
+								<!--ng-pattern="/^.{1,}@[_a-z0-9A-Z]+(\.[a-z0-9A-Z]+)+$/"-->
 						</div>
 					</div>
 					<div class="row margin-top-10" ng-show="!result.success && !result.exists">
@@ -98,6 +99,9 @@
 					</div>
 					<div ng-messages="inviteForm.$error" ng-if="submitted" class="help-block">
 						<p ng-message="email pattern">Please enter a valid email.</p>
+					</div>
+					<div ng-messages="result" ng-if="submitted" class="server-error help-block">
+						<p ng-message="serverError">Something went wrong. Please try again later.</p>
 					</div>
 				</form>
 			</div>

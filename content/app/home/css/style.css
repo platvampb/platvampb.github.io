@@ -386,6 +386,7 @@ section.products {
 	height: 18px;
 	margin-top: 0;
 }
+
 .form-invite .email{
 	background: transparent;
 	-webkit-box-shadow: none;
@@ -410,13 +411,15 @@ section.products {
 
 .form-invite .help-block {
 	margin-top: 10px;
+	font-size: initial;
 }
 
-.form-response {
+.form-invite .help-block.form-response {
 	font-size: 18px;
+	color: #d9534f;
 }
 
-.form-response span {
+.form-invite .help-block.form-response span {
 	border-bottom: solid 1px;
 }
 
@@ -435,6 +438,10 @@ button {
 	bottom: 20px;
 	right: 0px;
 	width: 100%;
+}
+
+.server-error p {
+	color: #a94442;
 }
 
 /* responsive code */
