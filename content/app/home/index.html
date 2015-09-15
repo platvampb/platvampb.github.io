@@ -1,34 +1,35 @@
-﻿<html lang="en-CA" ng-app="HomeApp">
-  <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title ng-bind="title"></title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.v.3.3.5.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href="http://fonts.googleapis.com/css?family=Poiret+One|Open+Sans:300&amp;subset=latin,greek" rel="stylesheet" type="text/css">
-  <script async="" src="//www.google-analytics.com/analytics.js"></script>
-  <script src="js/jquery/jquery-2.1.4.min.js"></script>
-  <script src="js/angular_core/angular.min.v.1.4.5.js"></script>
-  <script src="js/angular_core/angular-resource.min.v.1.4.5.js"></script>
-  <script src="js/angular_core/angular-route.min.v.1.4.5.js"></script>
-  <script src="js/angular_core/angular-cookies.min.v.1.4.5.js"></script>
-  <script src="js/angular_core/angular-messages.min.v.1.4.5.js"></script>
-  <script src="js/angular_core/angular-animate.min.v.1.4.5.js"></script>
-  <script src="js/angular_ui/ui-bootstrap-tpls.min.v.0.13.4.js"></script>
-  <script src="js/home_apps.js"></script>
-  <script src="js/home_controllers.js"></script>
-  <script src="js/career_controllers.js"></script>
-  <script src="js/home_services.js"></script>
+﻿<!doctype html>
+<html lang="en-CA" ng-app="HomeApp">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title ng-bind="title"></title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.v.3.3.5.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Poiret+One|Open+Sans:300&amp;subset=latin,greek" rel="stylesheet" type="text/css">
+	<script async="" src="//www.google-analytics.com/analytics.js"></script>
+	<script src="js/jquery/jquery-2.1.4.min.js"></script>
+	<script src="js/angular_core/angular.min.v.1.4.5.js"></script>
+	<script src="js/angular_core/angular-resource.min.v.1.4.5.js"></script>
+	<script src="js/angular_core/angular-route.min.v.1.4.5.js"></script>
+	<script src="js/angular_core/angular-cookies.min.v.1.4.5.js"></script>
+	<script src="js/angular_core/angular-messages.min.v.1.4.5.js"></script>
+	<script src="js/angular_core/angular-animate.min.v.1.4.5.js"></script>
+	<script src="js/angular_ui/ui-bootstrap-tpls.min.v.0.13.4.js"></script>
+	<script src="js/home_apps.js"></script>
+	<script src="js/home_controllers.js"></script>
+	<script src="js/home_services.js"></script>
+	<script src="js/career_controllers.js"></script>
 
-  <!-- the following script is for goolge analytic -->
-  <script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	  ga('create', 'UA-59096811-1', 'auto');
-	  ga('send', 'pageview');
-  </script>
+	<!-- the following script is for goolge analytic -->
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-59096811-1', 'auto');
+		ga('send', 'pageview');
+	</script>
 </head>
 
 <body ng-controller="WGHomeLanCtrl">
@@ -36,26 +37,24 @@
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	<![endif]-->
 	<div class="center">
-
 		<section class="header">
 			<div class="nav" ng-class="navClass">
 			<div class="container">
 				<a class="logo" href="/" ng-switch on="navClass">
-          <img ng-switch-when="nav-inverse" ng-src="img/logo/opaque_logo/WG_Logo_white.png"></img>
-          <img ng-switch-default ng-src="img/logo/opaque_logo/WG_Logo_opaque.png"></img>
-        </a>
+					<img ng-switch-when="nav-inverse" ng-src="img/logo/opaque_logo/WG_Logo_white_223x60.png"></img>
+					<img ng-switch-default ng-src="img/logo/opaque_logo/WG_Logo_opaque.png"></img>
+				</a>
 				<ul class="header-ul-list">
-					<li id="id_aboutus" class="header-list-end"><a href="#aboutus">about us</a></li>
-					<li id="id_jobs" class="header-list"><a href="#career">career</a></li>
+					<li id="id_jobs" class="header-list"><a href="#career">join us</a></li>
+					<li id="id_aboutus" class="header-list"><a href="#aboutus">about us</a></li>
 					<li id="id_products" class="header-list"><a href="#products">products</a></li>
 					<li id="id_home" class="header-list"><a href="#products">home</a></li>
 				</ul>
 			</div>
-      </div>
-    </section>
+			</div>
+		</section>
 
-    <div ng-view="">
-    </div>
+		<div ng-view=""></div>
 	</div>
 </body>
 </html>

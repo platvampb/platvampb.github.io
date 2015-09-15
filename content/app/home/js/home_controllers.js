@@ -1,25 +1,52 @@
 function readCookie(name) {
-    return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
+		return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
 }
 
 var HomeControllers = angular.module('HomeControllers', []);
 
-HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', function($scope, $http) {
+HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', 'subscribeService', function($scope, $http, subscribeService) {
 
-  $scope.submitForm = function(isValid) {
-    $scope.submitted = true;
-    if (isValid) {
-      alert('our form is amazing');
-    }
-  };
+	$scope.submitted = false;
+	$scope.loading = false;
+	$scope.result = {};
+	$scope.user = {};
 
-  $scope.moveToSubscribe = function () {
-    angular.element(('body')).animate({
-      scrollTop: angular.element('.keep-me-posted').offset().top
-    }, 500);
+	$scope.submitForm = function(isValid, inviteForm) {
 
-    angular.element('input[name=email]').focus();
-  };
+		$scope.submitted = true;
+
+		if (isValid) {
+			$scope.loading = true;
+			subscribeService.submit($scope.user.email).
+				then (function(response) {
+					var data = response.data;
+					if (data.result === true) {
+						$scope.result.success = true;
+					} else if (data.message == "SequelizeUniqueConstraintError") {
+						$scope.result.exists = true;
+					} else {
+						inviteForm.email.$setValidity('email', false);
+					}
+					$scope.loading = false;
+				}, function(response) {
+					$scope.loading = false;
+					$scope.result.serverError = true;
+				});
+		}
+	};
+
+	$scope.validate = function (field, inviteForm) {
+		inviteForm[field].$validate();
+		$scope.result.serverError = false;
+	};
+
+	$scope.moveToSubscribe = function () {
+		angular.element('body').animate({
+			scrollTop: angular.element('.keep-me-posted').offset().top
+		}, 500);
+
+		angular.element('input[name=email]').focus();
+	};
 }]);
 
 var metadataControllers = angular.module('metadataControllers', []);

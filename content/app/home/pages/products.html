@@ -62,20 +62,53 @@
 		</div>
 	</section>
 	<section class="keep-me-posted gray-bg">
-  	<div class="container clearfix">
-      <h2 class="lg-header">Keep me posted!</h2>
-      <p class="margin-bottom-20 paragraph-header">Receive updates, voice your opinion and get beta invitation by subscribing.</p>
-				<form name="inviteForm" novalidate="novalidate" ng-submit="submitForm(inviteForm.$valid)" class="form-inline form-invite ng-pristine ng-valid margin-top-15"
+		<div class="container clearfix">
+			<h2 class="lg-header">Keep me posted!</h2>
+			<p class="paragraph-header">Receive updates, voice your opinion and get beta invitation by subscribing.</p>
+			<div class="invite-form-container">
+				<form name="inviteForm" novalidate="novalidate" ng-submit="submitForm(inviteForm.$valid, inviteForm)" class="form-invite ng-pristine ng-valid margin-top-15"
 				ng-class="{ 'has-error': inviteForm.email.$invalid && submitted}">
-          <input type="email" name="email" placeholder="email@address.com" class="form-control border-white" required
-						ng-model="user.email"
-						ng-pattern="/^.{1,}@[_a-z0-9A-Z]+(\.[a-z0-9A-Z]+)+$/">
-  				<button type="submit" class="btn btn-danger btn-lg">Subscribe</button>
-					<div ng-messages="inviteForm.email.$error" ng-if="submitted" class="help-block">
+					<div ng-messages="result" ng-if="submitted" class="help-block form-response">
+						<span ng-message="success">You have successfully subscribed with email {{user.email}}!</span>
+						<span ng-message="exists">You are already subscribed with email {{user.email}}!</span>
+					</div>
+					<div class="row margin-top-10" ng-show="!result.success && !result.exists">
+						<div class="form-group col-sm-12" ng-class="{ 'has-error': inviteForm.email.$invalid && submitted}">
+							<input type="email" name="email" placeholder="email@address.com" class="border-white email form-control"
+								required
+								ng-change="validate('email', inviteForm)"
+								ng-model="user.email">
+								<!--ng-pattern="/^.{1,}@[_a-z0-9A-Z]+(\.[a-z0-9A-Z]+)+$/"-->
+						</div>
+					</div>
+					<div class="row margin-top-10" ng-show="!result.success && !result.exists">
+						<div class="form-group col-xs-1" ng-class="{ 'has-error': inviteForm.privacyCheckbox.$invalid && submitted}">
+							<input type="checkbox" name="privacyCheckbox" class="privacy-input" ng-model="user.privacy" required>
+						</div>
+						<div class="form-group col-xs-11 text_left">
+							<span class="privacy-text">
+								I agree to receive WhereGo electronic messages. You can unsubscribe at any time.
+								Please refer to our <a href="docs/WhereGoUserAgreement_v1.pdf" target="_blank">User Agreement</a> and <a href="docs/WhereGo_Privacy_v1.pdf" target="_blank">Privacy Policy</a> for more details.
+							</span>
+						</div>
+					</div>
+					<div class="row margin-top-10" ng-show="!result.success && !result.exists">
+						<div class="form-group col-xs-12">
+							<button type="submit" class="btn btn-danger btn-lg col-xs-12" ng-disabled="inviteForm.$invalid" ng-hide="loading">
+								<span >Subscribe</span>
+							</button>
+							<img ng-show="loading" src="img/assets/loading.gif"/>
+						</div>
+					</div>
+					<div ng-messages="inviteForm.$error" ng-if="submitted" class="help-block">
 						<p ng-message="email pattern">Please enter a valid email.</p>
 					</div>
+					<div ng-messages="result" ng-if="submitted" class="server-error help-block">
+						<p ng-message="serverError">Something went wrong. Please try again later.</p>
+					</div>
 				</form>
-    </div>
+			</div>
+		</div>
 
 		<div ng-controller="metaCrl">
 			<br>

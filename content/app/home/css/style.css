@@ -27,9 +27,9 @@ a.inverse-link:focus {
 }
 
 .lg-header {
-  font-size: 48px;
-  margin-top: 20px;
-  margin-bottom: 30px;
+	font-size: 48px;
+	margin-top: 20px;
+	margin-bottom: 30px;
 }
 
 .paragraph-header {
@@ -41,7 +41,7 @@ a.inverse-link:focus {
 }
 
 .gray-bg {
-  background-color: #f4f4f4;
+	background-color: #f4f4f4;
 }
 
 .blue-bg {
@@ -53,31 +53,27 @@ a.inverse-link:focus {
 }
 
 .margin-top-10 {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 .margin-top-15 {
-  margin-top: 15px;
+	margin-top: 15px;
 }
 
 .margin-bottom-10 {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .margin-bottom-20 {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .padding-top-10 {
-  padding-top: 10px;
+	padding-top: 10px;
 }
 
 .padding-top-15 {
-  padding-top: 15px;
-}
-
-.form-invite input::-webkit-input-placeholder {
-   color: rgba(255, 255, 255, 0.6);
+	padding-top: 15px;
 }
 
 .text_font {
@@ -154,7 +150,7 @@ ul.header-ul-list {
 	font-size: 18px;
 	padding: 5px 8px;
 	margin-top: 24px;
-  float: right;
+	float: right;
 }
 
 .banner-content-full-width {
@@ -170,7 +166,7 @@ ul.header-ul-list {
 	min-height: 120px;
 	padding-bottom: 20px;
 	padding-top: 10px;
-  color: white;
+	color: white;
 }
 
 .banner-content h3 {
@@ -187,7 +183,7 @@ ul.header-ul-list {
 .home-banner .banner-content h1 {
 	letter-spacing: 0.08em;
 	font-family: "Poiret One","Open Sans",Arial,sans-serif;
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 a.link_without_underline {
@@ -201,12 +197,12 @@ label.format {
 }
 
 table {
-    table-layout: fixed;
-  	width: 100%;
+		table-layout: fixed;
+		width: 100%;
 }
 
 td {
-    word-wrap:break-word;
+		word-wrap:break-word;
 }
 
 .border-black {
@@ -233,23 +229,23 @@ button.job_readmore {
 }
 
 .btn {
-  -webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
 }
 
 /* nav section */
 .header .container {
-  position: relative;
+	position: relative;
 }
 
 .nav {
 	padding-top: 35px;
 	padding-bottom: 15px;
-  background-color: transparent;
-  width: 100%;
+	background-color: transparent;
+	width: 100%;
 }
 
 .nav-inverse {
-  position: absolute;
+	position: absolute;
 }
 
 .nav a {
@@ -300,12 +296,108 @@ button.job_readmore {
 	font-size: 18px;
 }
 
+.logo {
+	float: left;
+}
+
+.logo img {
+	height: 60px;
+}
+
+/*products section*/
+ul.horizontal {
+	width: 100%;
+	float: left;
+	padding-left: 0;
+}
+
+.horizontal li {
+	list-style: none;
+}
+
+.step-container {
+	padding: 20px;
+	margin: auto;
+	background: rgba(255, 255, 255, 0.4);
+	font-size: 18px;
+	line-height: 1.3em;
+	border-radius: 10px;
+	box-shadow: 2px 1px 2px 1px rgb(128, 128, 128);
+	font-weight: normal;
+	height: 240px;
+	width: 240px;
+}
+
+section.products {
+	height:580px;
+	position: relative;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background-image:url("../img/assets/mid-section.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.products .container {
+	width: 850px;
+}
+
+.products h2 {
+	font-family: "Open Sans",Arial,sans-serif;
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.step-container h3 {
+	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.icon-container {
+	height: 75px;
+}
+
+.arrow {
+	height:40px;
+	background-image: url("../img/assets/arrow.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.arrow-flip {
+	height:40px;
+	background-image: url("../img/assets/arrow-flip-slim.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+
+/*Notify me section*/
+
+.invite-form-container {
+	margin: 40px auto;
+	width: 480px;
+}
+
+.form-invite input::-webkit-input-placeholder {
+	 color: rgba(255, 255, 255, 0.6);
+}
+
 .form-invite {
 	margin-bottom: 10px;
 }
 
-.form-invite input {
-	min-width: 270px;
+.form-invite .privacy-input {
+	width: 18px;
+	height: 18px;
+	margin-top: 0;
+}
+
+.form-invite .email{
 	background: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -329,105 +421,44 @@ button.job_readmore {
 
 .form-invite .help-block {
 	margin-top: 10px;
+	font-size: initial;
 }
 
-.logo {
-	float: left;
+.form-invite .help-block.form-response {
+	font-size: 18px;
+	color: #d9534f;
 }
 
-.logo img {
-	height: 60px;
+.form-invite .help-block.form-response span {
+	border-bottom: solid 1px;
 }
-
-/*products section*/
-ul.horizontal {
-  width: 100%;
-  float: left;
-  padding-left: 0;
-}
-
-.horizontal li {
-  list-style: none;
-}
-
-.step-container {
-  padding: 20px;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.4);
-  font-size: 18px;
-  line-height: 1.3em;
-  border-radius: 10px;
-  box-shadow: 2px 1px 2px 1px rgb(128, 128, 128);
-  font-weight: normal;
-  height: 240px;
-  width: 240px;
-}
-
-section.products {
-	height:580px;
-  position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
-	background-image:url("../img/assets/mid-section.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-}
-
-.products .container {
-  width: 850px;
-}
-
-.products h2 {
-	font-family: "Open Sans",Arial,sans-serif;
-	position: relative;
-  margin-bottom: 30px;
-}
-
-.step-container h3 {
-  font-weight: bold;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.icon-container {
-  height: 75px;
-}
-
-.arrow {
-	height:40px;
-	background-image: url("../img/assets/arrow.png");
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
-}
-
-.arrow-flip {
-	height:40px;
-	background-image: url("../img/assets/arrow-flip-slim.png");
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
-}
-
-
-/*Notify me section*/
 
 .keep-me-posted {
-  padding-top: 80px;
-  height: 420px;
-  position: relative;
+	padding-top: 80px;
+	min-height: 420px;
+	position: relative;
 }
 
 button {
-  margin-top: 25px;
+	margin-top: 25px;
 }
 
 .footer-list {
-  position: absolute;
-  bottom: 20px;
-  right: 0px;
-  width: 100%;
+	position: absolute;
+	bottom: 20px;
+	right: 0px;
+	width: 100%;
+}
+
+.server-error p {
+	color: #a94442;
+}
+
+/* responsive code */
+@media (max-width: 767px) {
+	.invite-form-container {
+		width: 100%;
+	}
 }
 
 /*career section*/
