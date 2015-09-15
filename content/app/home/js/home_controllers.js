@@ -7,6 +7,7 @@ var HomeControllers = angular.module('HomeControllers', []);
 HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', 'subscribeService', function($scope, $http, subscribeService) {
 
 	$scope.submitted = false;
+	$scope.loading = false;
 	$scope.result = {};
 	$scope.user = {};
 
@@ -15,6 +16,7 @@ HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', 'subscribeServic
 		$scope.submitted = true;
 
 		if (isValid) {
+			$scope.loading = true;
 			subscribeService.submit($scope.user.email).
 				then (function(response) {
 					var data = response.data;
@@ -25,7 +27,9 @@ HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', 'subscribeServic
 					} else {
 						inviteForm.email.$setValidity('email', false);
 					}
+					$scope.loading = false;
 				}, function(response) {
+					$scope.loading = false;
 					$scope.result.serverError = true;
 				});
 		}

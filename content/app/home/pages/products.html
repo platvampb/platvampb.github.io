@@ -94,7 +94,10 @@
 					</div>
 					<div class="row margin-top-10" ng-show="!result.success && !result.exists">
 						<div class="form-group col-xs-12">
-							<button type="submit" class="btn btn-danger btn-lg col-xs-12" ng-disabled="inviteForm.$invalid">Subscribe</button>
+							<button type="submit" class="btn btn-danger btn-lg col-xs-12" ng-disabled="inviteForm.$invalid" ng-hide="loading">
+								<span >Subscribe</span>
+							</button>
+							<img ng-show="loading" src="img/assets/loading.gif"/>
 						</div>
 					</div>
 					<div ng-messages="inviteForm.$error" ng-if="submitted" class="help-block">
