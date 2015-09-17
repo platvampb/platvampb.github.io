@@ -59,6 +59,10 @@ a.inverse-link:focus {
 	margin-bottom: 20px;
 }
 
+.margin-bottom-25, .form-group.margin-bottom-25 {
+	margin-bottom: 25px;
+}
+
 .padding-top-10 {
 	padding-top: 10px;
 }
@@ -188,12 +192,12 @@ label.format {
 }
 
 table {
-		table-layout: fixed;
-		width: 100%;
+	table-layout: fixed;
+	width: 100%;
 }
 
 td {
-		word-wrap:break-word;
+	word-wrap:break-word;
 }
 
 .border-black {
@@ -410,8 +414,8 @@ section.products {
 }
 
 .form-invite .help-block {
-	margin-top: 10px;
-	font-size: initial;
+	font-size: 14px;
+	font-weight: bold;
 }
 
 .form-invite .help-block.form-response {
@@ -442,6 +446,10 @@ button {
 
 .server-error p {
 	color: #a94442;
+}
+
+.email-error {
+	position: absolute;
 }
 
 /* responsive code */
