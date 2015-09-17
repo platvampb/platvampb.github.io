@@ -377,10 +377,6 @@ section.products {
 	width: 480px;
 }
 
-.form-invite input::-webkit-input-placeholder {
-	 color: rgba(255, 255, 255, 0.6);
-}
-
 .form-invite {
 	margin-bottom: 10px;
 }

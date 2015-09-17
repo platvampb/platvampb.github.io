@@ -80,7 +80,7 @@
 								ng-model="user.email"
 								ng-pattern="/^.{1,}@[_a-z0-9A-Z]+(\.[a-z0-9A-Z]+)+$/">
 
-							<div ng-messages="inviteForm.email.$error" ng-if="inviteForm.email.$touched && !inviteForm.email.$pending" class="help-block email-error">
+							<div ng-messages="inviteForm.email.$error" ng-if="inviteForm.email.$touched" class="help-block email-error">
 								<span ng-message="pattern required">Please enter a valid email.</span>
 							</div>
 						</div>
