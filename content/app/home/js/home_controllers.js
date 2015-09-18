@@ -41,7 +41,7 @@ HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', 'subscribeServic
 	};
 
 	$scope.moveToSubscribe = function () {
-		angular.element('body').animate({
+		angular.element("html, body").animate({
 			scrollTop: angular.element('.keep-me-posted').offset().top
 		}, 500);
 
