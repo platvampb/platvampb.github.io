@@ -23,7 +23,7 @@ HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', 'subscribeServic
 					if (data.result === true) {
 						$scope.result.success = true;
 					} else if (data.message == "SequelizeUniqueConstraintError") {
-						$scope.result.exists = true;
+						$scope.result.emailExists = true;
 					} else {
 						inviteForm.email.$setValidity('email', false);
 					}

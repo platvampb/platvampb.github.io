@@ -72,7 +72,7 @@
 						<span ng-message="success">You have successfully subscribed with email {{user.email}}!</span>
 						<span ng-message="emailExists">You are already subscribed with email {{user.email}}!</span>
 					</div>
-					<div class="row margin-top-10" ng-show="!result.success && !result.exists">
+					<div class="row margin-top-10" ng-show="!result.success && !result.emailExists">
 						<div class="form-group col-sm-12 margin-bottom-25" ng-class="{ 'has-error': inviteForm.email.$invalid && inviteForm.email.$touched}">
 							<input type="email" name="email" placeholder="email@address.com" class="border-white email form-control"
 								required
@@ -85,7 +85,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row margin-top-10" ng-show="!result.success && !result.exists">
+					<div class="row margin-top-10" ng-show="!result.success && !result.emailExists">
 						<div class="form-group col-xs-12 margin-bottom-10">
 							<button type="submit" class="btn btn-danger btn-lg col-xs-12" ng-hide="loading" ng-disabled="inviteForm.$invalid" >
 								<span>Subscribe</span>
@@ -93,13 +93,7 @@
 							<img ng-show="loading" src="img/assets/loading.gif"/>
 						</div>
 					</div>
-					<div class="row" ng-show="!result.success && !result.exists">
-						<!--ng-class="{ 'has-error': inviteForm.privacyCheckbox.$invalid && submitted}"-->
-						<!--div class="form-group col-xs-1">
-							<input type="checkbox" name="privacyCheckbox" class="privacy-input"
-								ng-model="user.privacy"
-								required="inviteForm.privacyCheckbox.value">
-						</div-->
+					<div class="row" ng-show="!result.success && !result.emailExists">
 						<div class="form-group col-xs-12 text_left">
 							<span class="privacy-text">
 								By clicking Subscirbe, you agree to our <a href="docs/WhereGoUserAgreement_v1.pdf" target="_blank">User Agreement</a> and <a href="docs/WhereGo_Privacy_v1.pdf" target="_blank">Privacy Policy</a>.
