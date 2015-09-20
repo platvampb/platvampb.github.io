@@ -1,25 +1,123 @@
-<div>
-	<p class="right_margin">
-		<div class="content_container">
-			<br><br>
-			<p class="text_font_large text_left"><b>guide dog</b></p>
-			<p class="text_left"><b>Your vacation is supposed to be an enjoyable and worry-free experience. We understand that, and we are going to take away the pain of planning your vacation from you.</b></p>
-			<p class="text_left">No more random googling, no more irrelevant reviews, no more pins on the maps, and no more paper record for your trip!</p>
-			<p  class="text_left">In as short as 10 seconds, we DO the planning for you, tailored to your personal interests and budget!</p>
-			<br/><br/>
-			<img src="img/assets/product/screen_start_planning.jpeg" width="90%">
-			<br/><br/>
-			<img src="img/assets/arrow_down.png" width="50px" height="30px">
-			<p class="text_font"><h2>In 5 minutes</h2></p>
-			<img src="img/assets/arrow_down.png" width="50px" height="30px">
-			<br/><br/>
-			<img src="img/assets/product/screen_travel_itinerary.jpeg" width="90%">
-			<p class="text_font_small" align="right">**iamges are for demo only, and may not exactly reflect the product's design and features.</p>
-			
-			<p class="right_margin">
-				<br/>
-				<h1 align="right"><a ng-href="#career" class="text_center button_background">join our adventure!</a></h1>
-			</p>
+	<section class="banner home-banner">
+		<div class="container">
+			<div class="banner-content banner-content-full-width">
+				<h1 class="lg-header">You Are There</h1>
+				<h3>From inspiration to organization, Wherego gets you on your way</h3>
+				<div class="invite-container">
+					<p>We are working hard to bring an amazing product to you</p>
+					<div class="margin-top-10"><button class="btn btn-danger btn-lg" ng-click="moveToSubscribe()">Keep me posted!</button></div>
+				</div>
+			</div>
 		</div>
-	</p>
-</div>
+	</section>
+	<section class="products">
+		<div class="container clearfix">
+			<h2 class="lg-header">How does Wherego help me?</h2>
+			<div class="row arrow-row hidden-xs">
+				<div class="col-md-3"></div>
+				<div class="col-md-2 arrow"></div>
+				<div class="col-md-2"></div>
+				<div class="col-md-2 arrow"></div>
+				<div class="col-md-3"></div>
+			</div>
+			<ul class="how-it-works horizontal">
+				<li class="clearfix col-xs-12 col-md-4">
+					<div class="step-container">
+						<div class="icon-container padding-top-10">
+							<i class="fa fa-lightbulb-o fa-3x"></i>
+						</div>
+						<h3>Get Inspired</h3>
+						<!--div class="img-container" style="background-image: url('img/assets/product/Eiffel-Tower-Heart.png')"></div-->
+						<p class="margin-top-10">Find pictures, videos, journals and other travel inspirations.</p>
+					</div>
+				</li>
+				<li class="clearfix col-xs-12 col-md-4">
+					<div class="step-container">
+						<div class="icon-container padding-top-15">
+							<i class="fa fa-money fa-2x fa-fw"></i>
+							<i class="fa fa-calendar fa-2x fa-fw"></i>
+							<i class="fa fa-users fa-2x fa-fw"></i>
+						</div>
+						<h3>Get Organized</h3>
+						<!--div class="img-container" style="background-image: url('img/assets/product/Eiffel-Tower-Itinerary.png')"></div-->
+						<p class="margin-top-10">Set budget, make itinerary and collaborate.</p>
+					</div>
+				</li>
+				<li class="clearfix col-xs-12 col-md-4">
+					<div class="step-container">
+						<div class="icon-container padding-top-10">
+								<i class="fa fa-plane fa-3x"></i>
+						</div>
+						<h3>Get Going</h3>
+						<!--div class="img-container" style="background-image: url('img/assets/product/plane-wing.png')"></div-->
+						<p class="margin-top-10">Go on your adventure excited and prepared!</p>
+					</div>
+				</li>
+			</ul>
+			<div class="row arrow-row hidden-xs">
+				<div class="col-md-2"></div>
+				<div class="col-md-8 arrow-flip"></div>
+				<div class="col-md-2"></div>
+			</div>
+		</div>
+	</section>
+	<section class="keep-me-posted gray-bg">
+		<div class="container clearfix">
+			<h2 class="lg-header">Keep me posted!</h2>
+			<p class="paragraph-header">Receive updates, voice your opinion and get beta invitation by subscribing.</p>
+			<div class="invite-form-container">
+				<form name="inviteForm" novalidate="novalidate" ng-submit="submitForm(inviteForm.$valid, inviteForm)" class="form-invite ng-pristine ng-valid margin-top-15"
+				ng-class="{ 'has-error': inviteForm.$invalid && submitted}">
+					<div ng-messages="result" ng-if="submitted" class="help-block form-response">
+						<span ng-message="success">You have successfully subscribed with email {{user.email}}!</span>
+						<span ng-message="emailExists">You are already subscribed with email {{user.email}}!</span>
+					</div>
+					<div class="row margin-top-10" ng-show="!result.success && !result.exists">
+						<div class="form-group col-sm-12 margin-bottom-25" ng-class="{ 'has-error': inviteForm.email.$invalid && inviteForm.email.$touched}">
+							<input type="email" name="email" placeholder="email@address.com" class="border-white email form-control"
+								required
+								ng-change="validate('email', inviteForm)"
+								ng-model="user.email"
+								ng-pattern="/^.{1,}@[_a-z0-9A-Z]+(\.[a-z0-9A-Z]+)+$/">
+
+							<div ng-messages="inviteForm.email.$error" ng-if="inviteForm.email.$touched" class="help-block email-error">
+								<span ng-message="pattern required">Please enter a valid email.</span>
+							</div>
+						</div>
+					</div>
+					<div class="row margin-top-10" ng-show="!result.success && !result.exists">
+						<div class="form-group col-xs-12 margin-bottom-10">
+							<button type="submit" class="btn btn-danger btn-lg col-xs-12" ng-hide="loading" ng-disabled="inviteForm.$invalid" >
+								<span>Subscribe</span>
+							</button>
+							<img ng-show="loading" src="img/assets/loading.gif"/>
+						</div>
+					</div>
+					<div class="row" ng-show="!result.success && !result.exists">
+						<!--ng-class="{ 'has-error': inviteForm.privacyCheckbox.$invalid && submitted}"-->
+						<!--div class="form-group col-xs-1">
+							<input type="checkbox" name="privacyCheckbox" class="privacy-input"
+								ng-model="user.privacy"
+								required="inviteForm.privacyCheckbox.value">
+						</div-->
+						<div class="form-group col-xs-12 text_left">
+							<span class="privacy-text">
+								By clicking Subscirbe, you agree to our <a href="docs/WhereGoUserAgreement_v1.pdf" target="_blank">User Agreement</a> and <a href="docs/WhereGo_Privacy_v1.pdf" target="_blank">Privacy Policy</a>.
+							</span>
+						</div>
+						<!--div ng-messages="inviteForm.privacyCheckboc.$error" ng-if="submitted" class="help-block">
+							<p ng-message="privacyCheckbox required">Please check to receive our updates.</p>
+						</div-->
+					</div>
+					<div ng-messages="result" ng-if="submitted" class="server-error help-block">
+						<p ng-message="serverError">Something went wrong. Please try again later.</p>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div ng-controller="metaCrl">
+			<br>
+			<div class="footer-list"><p id="id_footer" style="text-align:right;margin-right:5%">{{metadata.meta_version}}</p></div>
+		</div>
+	</section>
