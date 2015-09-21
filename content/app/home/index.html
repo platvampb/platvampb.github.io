@@ -33,7 +33,7 @@
 	</script>
 </head>
 
-<body ng-controller="WGHomeLanCtrl">
+<body>
 	<!--[if lt IE 7]>
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	<![endif]-->
@@ -68,5 +68,10 @@
 
 		<div ng-view=""></div>
 	</div>
+	
+		<div ng-controller="metaCtrl">
+			<br>
+			<div class="footer-list"><p id="id_footer" style="text-align:right;margin-right:5%">{{metadata.meta_version}}</p></div>
+		</div>
 </body>
 </html>

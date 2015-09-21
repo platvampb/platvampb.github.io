@@ -1,0 +1,17 @@
+<div class="container" style="border:1px solid black">
+	<form id="contact-form" class="form-invite margin-top-15">
+		<h2 class="lg-header">Contact Us</h2>
+		<input type="text" class="border-white" name="contact-form-name" ng-model="contact.name" placeholder="First name, Last name" required>
+		<input type="email" class="border-white email" name="contact-form-email" ng-model="contact.email" placeholder="email" required>
+		</br>
+		<input type="text" class="border-white" name="contact-form-number" ng-model="contact.number" placeholder="your number(with area code)" required>
+		<input type="text" class="border-white" name="contact-form-title" ng-model="contact.title" placeholder="your title">
+		</br>
+		
+		<textarea elastic class="border-white" name="contact-form-content" ng-model="contact.content" placeholder="Please provide details of your inquiry." required></textarea>
+		<button type="submit" class="btn btn-danger col-xs-6" ng-hide="loading" ng-disabled="inviteForm.$invalid" >
+								<span>Send</span>
+							</button>
+							<img ng-show="loading" src="img/assets/loading.gif"/>
+	</form>
+</div>

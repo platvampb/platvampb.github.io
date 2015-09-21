@@ -5,7 +5,7 @@ var wheregoHomeApp = angular.module('HomeApp',
 		'ngAnimate',
 		'ngMessages',
 		'ui.bootstrap',
-		'HomeControllers',
+		'homeControllers',
 		'metadataControllers'
 	]);
 
@@ -14,16 +14,21 @@ wheregoHomeApp.config(['$routeProvider',
 		$routeProvider.
 			when('/aboutus', {
 				templateUrl: 'pages/aboutus.html',
-				title:'about wherego'
+				title:'About Wherego'
 			}).
 			when('/products', {
 					templateUrl: 'pages/products.html',
-					title:'wherego products',
-					navClass: 'nav-inverse'
+					title:'Wherego Products',
+					navClass: 'nav-inverse',
+					controller: 'WGProductsCtrl'
 				}).
 			when('/career', {
 				templateUrl: 'pages/career.html',
 				title:'looking for a senior software engineer - join us as partner!'
+			}).
+			when('/contactus', {
+				templateUrl: 'pages/contactus.html',
+				title:'Contact Us'
 			}).
 			otherwise({
 				redirectTo: '/products'
@@ -41,3 +46,21 @@ wheregoHomeApp.run(['$location', '$rootScope', '$window', '$anchorScroll', '$rou
 				$window.scrollTo(0,0);
 		});
 }]);
+
+wheregoHomeApp.directive('elastic', [
+                                     '$timeout',
+                                     function($timeout) {
+                                         return {
+                                             restrict: 'A',
+                                             link: function($scope, element) {
+                                                 $scope.initialHeight = $scope.initialHeight || element[0].style.height;
+                                                 var resize = function() {
+                                                     element[0].style.height = $scope.initialHeight;
+                                                     element[0].style.height = "" + element[0].scrollHeight + "px";
+                                                 };
+                                                 element.on("input change", resize);
+                                                 $timeout(resize, 0);
+                                             }
+                                         };
+                                     }
+                                 ]);
