@@ -23,7 +23,7 @@ HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', 'subscribeServic
 					if (data.result === true) {
 						$scope.result.success = true;
 					} else if (data.message == "SequelizeUniqueConstraintError") {
-						$scope.result.exists = true;
+						$scope.result.emailExists = true;
 					} else {
 						inviteForm.email.$setValidity('email', false);
 					}
@@ -41,14 +41,13 @@ HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', 'subscribeServic
 	};
 
 	$scope.moveToSubscribe = function () {
-		$("html, body").animate({
-			scrollTop: $('.keep-me-posted').offset().top
+		angular.element("html, body").animate({
+			scrollTop: angular.element('.keep-me-posted').offset().top
 		}, 500);
 
-		$('input[name=email]').focus();
+		angular.element('#subscriberEmail').focus();
 	};
 }]);
-
 
 var metadataControllers = angular.module('metadataControllers', []);
 

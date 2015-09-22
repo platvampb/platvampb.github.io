@@ -13,7 +13,7 @@
 	<section class="products">
 		<div class="container clearfix">
 			<h2 class="lg-header">How does Wherego help me?</h2>
-			<div class="row arrow-row hidden-xs">
+			<div class="row arrow-row hidden-xs hidden-sm">
 				<div class="col-md-3"></div>
 				<div class="col-md-2 arrow"></div>
 				<div class="col-md-2"></div>
@@ -72,9 +72,9 @@
 						<span ng-message="success">You have successfully subscribed with email {{user.email}}!</span>
 						<span ng-message="emailExists">You are already subscribed with email {{user.email}}!</span>
 					</div>
-					<div class="row margin-top-10" ng-show="!result.success && !result.exists">
+					<div class="row margin-top-10" ng-show="!result.success && !result.emailExists">
 						<div class="form-group col-sm-12 margin-bottom-25" ng-class="{ 'has-error': inviteForm.email.$invalid && inviteForm.email.$touched}">
-							<input type="email" name="email" placeholder="email@address.com" class="border-white email form-control"
+							<input id="subscriberEmail" type="email" name="email" placeholder="email@address.com" class="border-white email form-control"
 								required
 								ng-change="validate('email', inviteForm)"
 								ng-model="user.email"
@@ -85,7 +85,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row margin-top-10" ng-show="!result.success && !result.exists">
+					<div class="row margin-top-10" ng-show="!result.success && !result.emailExists">
 						<div class="form-group col-xs-12 margin-bottom-10">
 							<button type="submit" class="btn btn-danger btn-lg col-xs-12" ng-hide="loading" ng-disabled="inviteForm.$invalid" >
 								<span>Subscribe</span>
@@ -93,13 +93,7 @@
 							<img ng-show="loading" src="img/assets/loading.gif"/>
 						</div>
 					</div>
-					<div class="row" ng-show="!result.success && !result.exists">
-						<!--ng-class="{ 'has-error': inviteForm.privacyCheckbox.$invalid && submitted}"-->
-						<!--div class="form-group col-xs-1">
-							<input type="checkbox" name="privacyCheckbox" class="privacy-input"
-								ng-model="user.privacy"
-								required="inviteForm.privacyCheckbox.value">
-						</div-->
+					<div class="row" ng-show="!result.success && !result.emailExists">
 						<div class="form-group col-xs-12 text_left">
 							<span class="privacy-text">
 								By clicking Subscirbe, you agree to our <a href="docs/WhereGoUserAgreement_v1.pdf" target="_blank">User Agreement</a> and <a href="docs/WhereGo_Privacy_v1.pdf" target="_blank">Privacy Policy</a>.

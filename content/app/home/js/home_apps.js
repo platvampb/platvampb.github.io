@@ -2,7 +2,9 @@ var wheregoHomeApp = angular.module('HomeApp',
 	[
 		'ngRoute',
 		'ngCookies',
+		'ngAnimate',
 		'ngMessages',
+		'ui.bootstrap',
 		'HomeControllers',
 		'metadataControllers'
 	]);
@@ -28,9 +30,10 @@ wheregoHomeApp.config(['$routeProvider',
 			});
 	}]);
 
-wheregoHomeApp.run(['$location', '$rootScope', function($location, $rootScope) {
+wheregoHomeApp.run(['$location', '$rootScope', '$window', function($location, $rootScope, $window) {
 		$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-			$rootScope.title = current.$$route.title;
-			$rootScope.navClass = current.$$route.navClass;
+				$rootScope.title = current.$$route.title;
+				$rootScope.navClass = current.$$route.navClass;
+				$window.scrollTo(0,0);
 		});
 }]);

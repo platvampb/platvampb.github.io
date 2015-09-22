@@ -6,15 +6,21 @@ p, div {
 	font-family: "Open Sans",Arial,sans-serif;
 }
 
-a.inverse-link {
-	color: white;
+a {
+	outline: none;
 }
 
+.orange-text {
+	color: #d9534f;
+}
+
+a.orange-link,
 a.inverse-link:hover,
 a.inverse-link:active,
 a.inverse-link:focus {
 	color: #d9534f;
 	text-decoration: none;
+	outline: none;
 }
 
 .clearfix:after {
@@ -33,10 +39,15 @@ a.inverse-link:focus {
 
 .clickable {
 	cursor: pointer;
+	outline: none;
 }
 
 .gray-bg {
 	background-color: #f4f4f4;
+}
+
+.blue-bg {
+  background-color: #66ae33;
 }
 
 .opaque-white {
@@ -246,23 +257,25 @@ button.job_readmore {
 .nav a {
 	color: #66aecc;
 	text-decoration: none;
+
+	/* CSS Transition */
+	-webkit-transition: color .2s ease-in-out;
+	-moz-transition: color .2s ease-in-out;
+	-ms-transition: color .2s ease-in-out;
+	-o-transition: color .2s ease-in-out;
+	transition: color .2s ease-in-out;
 }
 
-.nav a:visited,
 .nav a:hover,
 .nav a:active,
 .nav a:focus {
+	outline: none;
+	color: #d9534f;
 	text-decoration: none;
 }
 
 .nav-inverse a {
-	color: white;
-}
-
-.nav-inverse a:hover,
-.nav-inverse a:active,
-.nav-inverse a:focus {
-	color: #d9534f;
+	color: #F2F2F2;
 }
 
 /* header section related styling */
@@ -453,4 +466,75 @@ button {
 	.invite-form-container {
 		width: 100%;
 	}
+}
+
+/*career section*/
+
+.jobs-banner {
+	background-color: #66aecc;
+	background-image: url('../img/assets/three_meerkats.jpg');
+	background-size: cover;
+	background-position: center;
+	text-align: left;
+}
+
+.jobs-banner a:hover {
+	outline: none;
+	text-decoration: none;
+}
+
+.btn-ghost {
+	background: transparent;
+	color: #F2F2F2;
+	border: 2px solid #F2F2F2;
+	border-radius: 5px;
+	font-size: 20px;
+	padding: 7px 12px;
+	display: inline-block;
+
+	/* CSS Transition */
+	-webkit-transition: border .2s ease-in-out, color .2s ease-in-out;
+	-moz-transition: border .2s ease-in-out, color .2s ease-in-out;
+	-ms-transition: border .2s ease-in-out, color .2s ease-in-out;
+	-o-transition: border .2s ease-in-out, color .2s ease-in-out;
+	transition: border .2s ease-in-out, color .2s ease-in-out;
+}
+
+.btn-ghost:hover, .btn-ghost:active {
+	color: #d9534f;
+	border-color: #d9534f;
+	outline: none;
+}
+
+.jobs-content {
+	padding-top: 45px;
+	min-height: 240px;
+	background-color: #eee;
+}
+
+p.fa-container-sm {
+	margin: 0;
+	font-size: 18px;
+	text-align: center;
+}
+
+.panel-group .panel {
+	border: 2px solid #333;
+}
+
+.panel .panel-body {
+	padding: 20px;
+}
+
+.panel .panel-body p {
+	margin-left: 25px;
+}
+
+.panel-group .panel-default > .panel-heading, .panel-default .panel-footer {
+	background-color: transparent;
+}
+
+.panel-title {
+	text-align: center;
+	font-weight: bold;
 }
