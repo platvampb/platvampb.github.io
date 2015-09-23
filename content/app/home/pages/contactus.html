@@ -1,17 +1,67 @@
 <div class="container" style="border:1px solid black">
 	<form id="contact-form" class="form-invite margin-top-15">
+	<div class="container">
 		<h2 class="lg-header">Contact Us</h2>
-		<input type="text" class="border-white" name="contact-form-name" ng-model="contact.name" placeholder="First name, Last name" required>
-		<input type="email" class="border-white email" name="contact-form-email" ng-model="contact.email" placeholder="email" required>
 		</br>
-		<input type="text" class="border-white" name="contact-form-number" ng-model="contact.number" placeholder="your number(with area code)" required>
-		<input type="text" class="border-white" name="contact-form-title" ng-model="contact.title" placeholder="your title">
-		</br>
-		
-		<textarea elastic class="border-white" name="contact-form-content" ng-model="contact.content" placeholder="Please provide details of your inquiry." required></textarea>
-		<button type="submit" class="btn btn-danger col-xs-6" ng-hide="loading" ng-disabled="inviteForm.$invalid" >
-								<span>Send</span>
-							</button>
-							<img ng-show="loading" src="img/assets/loading.gif"/>
+			<div class="col-md-6">
+				<input type="text" class="border-white col-xs-4" name="contact-form-name" ng-model="contact.name" placeholder="First name, Last name" required>
+				<div class="col-xs-4"></div>
+				<input type="email" class="border-white col-xs-4" name="contact-form-email" ng-model="contact.email" placeholder="email" required>
+			
+				</br>
+				</br>
+				
+				<input type="text" class="col-xs-4 border-white" name="contact-form-number" ng-model="contact.number" placeholder="your number(with area code)" required>
+				<div class="col-xs-4"></div>
+				<input type="text" class="col-xs-4 border-white" name="contact-form-title" ng-model="contact.title" placeholder="your title">
+				
+				</br>
+				</br>
+				
+				<textarea class="border-white full-size" name="contact-form-content" ng-model="contact.content" placeholder="Please provide details of your inquiry." required></textarea>
+
+				</br>
+				</br>
+				<button type="submit" class="btn btn-danger full-size" ng-hide="loading" ng-disabled="inviteForm.$invalid" >
+					<span>Send</span>
+				</button>
+				<img ng-show="loading" src="img/assets/loading.gif"/>
+			</div>
+			<div class="col-md-3">
+				Visit us on:
+				</br>
+				fix this
+					<button width="15" height="15" border="0" src="img/3rdParty/wechat.png" data-toggle="wechat-qr-code" data-target="wechat-qr-code-modal"/>
+					<!-- modal popup -->
+					<div id="wechat-qr-code-modal" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-body">
+									<img width="43" height="43" border="0" src="img/3rdParty/qrcode_for_gh_43.png"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				<!-- registration undergoing
+				<a href="">
+					<img width="15" height="15" border="0" src="img/3rdParty/weibo.png" alt="linkedin profile"/>
+				</a>
+				 -->
+				<a href="https://www.linkedin.com/company/10045843?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10045843%2Cidx%3A1-1-1%2CtarId%3A1442985418223%2Ctas%3Awherego">
+					<img width="15" height="15" border="0" src="img/3rdParty/linkedin.png"/>
+				</a>
+				<a href="http://instagram.com/wewherego">
+					<img width="15" height="15" border="0" src="img/3rdParty/instagram.png"/>
+				</a>
+				<a href="https://www.pinterest.com/wherego/">
+					<img width="15" height="15" border="0" src="img/3rdParty/pinterest.png"/>
+				</a>
+				<a href="https://twitter.com/WeWherego">
+					<img width="15" height="15" border="0" src="img/3rdParty/twitter.jpg"/>
+				</a>
+			</div>
+			</div>
+			<div class="container"></br></div>
 	</form>
 </div>
