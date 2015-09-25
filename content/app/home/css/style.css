@@ -717,6 +717,17 @@ section.mission-statement {
 	width: 100%;
 }
 
+button.btn-contact {
+	background-image:url('../img/button_logo_color.jpg');
+	background-repeat:repeat-x;
+	color: white;
+}
+
+button.wechat-qr-code {
+	background-image:url('../img/3rdParty/wechat.png');
+	background-repeat:no-repeat;
+}
+
 ul.no-indent {
 	list-style:none;
 	padding-left: 0;
@@ -726,7 +737,18 @@ div.main-box {
 	margin-bottom: 10px;
 }
 
+img.qr-code {
+	height: 172px;
+	width: 172px;
+	border: 0;
+}
+
 img.3rd-party-logo {
-	height: 43px;
-	width: 43px;
+	height: 20px;
+	width: 20px;
+}
+
+#wechat-qr-code-modal {
+	top:5%;
+	right:0%;
 }

@@ -1,67 +1,81 @@
-<div class="container" style="border:1px solid black">
+<div class="container">
 	<form id="contact-form" class="form-invite margin-top-15">
-	<div class="container">
-		<h2 class="lg-header">Contact Us</h2>
 		</br>
-			<div class="col-md-6">
-				<input type="text" class="border-white col-xs-4" name="contact-form-name" ng-model="contact.name" placeholder="First name, Last name" required>
-				<div class="col-xs-4"></div>
-				<input type="email" class="border-white col-xs-4" name="contact-form-email" ng-model="contact.email" placeholder="email" required>
+		<section class="col-lg-10">
+		
+			<h2 class="lg-header">Contact Us</h2>
+			<div>
+				<input type="text" class="border-white col-xs-6" name="contact-form-name" ng-model="contact.name" placeholder="First name, Last name" required>
+				<input type="email" class="border-white col-xs-6" name="contact-form-email" ng-model="contact.email" placeholder="Your Email" required>
 			
 				</br>
 				</br>
 				
-				<input type="text" class="col-xs-4 border-white" name="contact-form-number" ng-model="contact.number" placeholder="your number(with area code)" required>
-				<div class="col-xs-4"></div>
-				<input type="text" class="col-xs-4 border-white" name="contact-form-title" ng-model="contact.title" placeholder="your title">
+				<input type="text" class="border-white col-xs-6" name="contact-form-number" ng-model="contact.number" placeholder="Your number (with area code)" required>
+				<input type="text" class="border-white col-xs-6" name="contact-form-title" ng-model="contact.title" placeholder="Your title">
 				
 				</br>
 				</br>
 				
-				<textarea class="border-white full-size" name="contact-form-content" ng-model="contact.content" placeholder="Please provide details of your inquiry." required></textarea>
+				<textarea rows="10" class="border-white full-size" name="contact-form-content" ng-model="contact.content" placeholder="Please provide details of your inquiry." required></textarea>
 
 				</br>
 				</br>
-				<button type="submit" class="btn btn-danger full-size" ng-hide="loading" ng-disabled="inviteForm.$invalid" >
+				<button type="submit" class="btn-contact btn" ng-hide="loading" ng-disabled="inviteForm.$invalid" >
 					<span>Send</span>
 				</button>
 				<img ng-show="loading" src="img/assets/loading.gif"/>
+			</br>
 			</div>
-			<div class="col-md-3">
-				Visit us on:
+		</section>
+		<section class="col-lg-2">
+			<div>
+				<b>Visit us on:</b>
 				</br>
-				fix this
-					<button width="15" height="15" border="0" src="img/3rdParty/wechat.png" data-toggle="wechat-qr-code" data-target="wechat-qr-code-modal"/>
-					<!-- modal popup -->
-					<div id="wechat-qr-code-modal" class="modal fade" role="dialog">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-body">
-									<img width="43" height="43" border="0" src="img/3rdParty/qrcode_for_gh_43.png"/>
-								</div>
-							</div>
-						</div>
-					</div>
+				</br>
+				<ul class="no-indent">
+				<li>
+				<a >
+					<img width="20" height="20" border="0" src="img/3rdParty/wechat.png" data-toggle="modal" data-target="#wechat-qr-code-modal">
 				</a>
+				<div class="modal fade" id="wechat-qr-code-modal" role="dialog">
+					<img class="qr-code" src="img/3rdParty/qrcode_for_gh_43.jpg"/>
+				</div>
+				</li>
 				<!-- registration undergoing
+				<li>
 				<a href="">
-					<img width="15" height="15" border="0" src="img/3rdParty/weibo.png" alt="linkedin profile"/>
+					<img width="15" height="15" border="0" src="img/3rdParty/weibo.png" alt="weibo profile"/>
 				</a>
+				</li>
 				 -->
+				 <li>
 				<a href="https://www.linkedin.com/company/10045843?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10045843%2Cidx%3A1-1-1%2CtarId%3A1442985418223%2Ctas%3Awherego">
-					<img width="15" height="15" border="0" src="img/3rdParty/linkedin.png"/>
+					<img class="3rd-party-logo" src="img/3rdParty/linkedin.png"/>
 				</a>
+				</li>
+				<li>
+				<a href="https://vimeo.com/wherego">
+					<img class="3rd-party-logo" src="img/3rdParty/vimeo.jpg"/>
+				</a>
+				</li>
+				<li>
 				<a href="http://instagram.com/wewherego">
-					<img width="15" height="15" border="0" src="img/3rdParty/instagram.png"/>
+					<img class="3rd-party-logo" src="img/3rdParty/instagram.png"/>
 				</a>
+				</li>
+				<li>
 				<a href="https://www.pinterest.com/wherego/">
-					<img width="15" height="15" border="0" src="img/3rdParty/pinterest.png"/>
+					<img class="3rd-party-logo" src="img/3rdParty/pinterest.png"/>
 				</a>
-				<a href="https://twitter.com/WeWherego">
-					<img width="15" height="15" border="0" src="img/3rdParty/twitter.jpg"/>
+				</li>
+				<li>
+				<a class="3rd-party-logo" href="https://twitter.com/WeWherego">
+					<img class="3rd-party-logo" src="img/3rdParty/twitter.jpg"/>
 				</a>
+				</li>
+				</ul>
 			</div>
-			</div>
-			<div class="container"></br></div>
+		</section>
 	</form>
 </div>
