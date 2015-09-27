@@ -30,10 +30,14 @@ wheregoHomeApp.config(['$routeProvider',
 			});
 	}]);
 
-wheregoHomeApp.run(['$location', '$rootScope', '$window', function($location, $rootScope, $window) {
+wheregoHomeApp.run(['$location', '$rootScope', '$window', '$anchorScroll', '$routeParams', function($location, $rootScope, $window, $anchorScroll, $routeParams) {
 		$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
 				$rootScope.title = current.$$route.title;
 				$rootScope.navClass = current.$$route.navClass;
+				if ($routeParams.scrollTo) {
+					$location.hash($routeParams.scrollTo);
+					$anchorScroll();
+				}
 				$window.scrollTo(0,0);
 		});
 }]);

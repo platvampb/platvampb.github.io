@@ -10,6 +10,10 @@ a {
 	outline: none;
 }
 
+section {
+	padding: 80px 0;
+}
+
 .orange-text {
 	color: #d9534f;
 }
@@ -132,9 +136,9 @@ div.left_margin {
 	text-align: left;
 }
 
-a.text_center {
+a#id_join {
 	text-decoration:none;
-	color: white;
+	color: #d9534f;
 	font-size: 23px;
 	text-align:center;
 }
@@ -239,6 +243,10 @@ button.job_readmore {
 }
 
 /* nav section */
+section.header {
+	padding: 0;
+}
+
 .header .container {
 	position: relative;
 }
@@ -338,8 +346,6 @@ ul.horizontal {
 section.products {
 	height:580px;
 	position: relative;
-	padding-top: 80px;
-	padding-bottom: 80px;
 	background-image:url("../img/assets/mid-section.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -437,7 +443,6 @@ section.products {
 }
 
 .keep-me-posted {
-	padding-top: 80px;
 	min-height: 420px;
 	position: relative;
 }
@@ -537,4 +542,60 @@ p.fa-container-sm {
 .panel-title {
 	text-align: center;
 	font-weight: bold;
+}
+
+/* About us header section */
+.slogan {
+	background: #33aecc;
+	color: #E0E0E0;
+	padding: 30px 0 40px 0;
+	line-height: 1.3em;
+}
+
+.slogan h1 {
+	font-size: 28px;
+}
+
+.slogan .highlight {
+	color: white;
+	font-weight: bold;
+}
+
+section.mission-statement, section.team, section.company-value {
+	padding: 40px 0 60px 0;
+	font-size: 16px;
+}
+
+section.mission-statement {
+	background-color: #E0E0E0;
+}
+
+.mission-statement h1, section.team h1 {
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.mission-statement ul li {
+	line-height: 2em;
+}
+
+.team .team-member {
+	padding: 0 30px;
+}
+
+.canada img {
+	margin-right: 1em;
+}
+.avatar {
+	border-radius: 50%;
+	border: solid 5px white;
+	overflow: hidden;
+	width: 190px;
+	height: 190px;
+	margin: 20px auto 20px auto;
+}
+
+.team-member-title {
+	color: #acacac;
+	margin-bottom: 15px;
 }
