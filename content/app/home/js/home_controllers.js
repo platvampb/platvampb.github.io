@@ -45,7 +45,7 @@ HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', 'subscribeServic
 			scrollTop: angular.element('.keep-me-posted').offset().top
 		}, 500);
 
-		angular.element('input[name=email]').focus();
+		angular.element('#subscriberEmail').focus();
 	};
 }]);
 

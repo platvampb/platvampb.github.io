@@ -77,7 +77,7 @@
 					</div>
 					<div class="row margin-top-10" ng-show="!result.success && !result.emailExists">
 						<div class="form-group col-sm-12 margin-bottom-25" ng-class="{ 'has-error': inviteForm.email.$invalid && inviteForm.email.$touched}">
-							<input type="email" name="email" placeholder="email@address.com" class="border-white email form-control"
+							<input id="subscriberEmail" type="email" name="email" placeholder="email@address.com" class="border-white email form-control"
 								required
 								ng-change="validate('email', inviteForm)"
 								ng-model="user.email"
