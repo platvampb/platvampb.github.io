@@ -215,7 +215,7 @@ section.header {
 }
 
 .nav-inverse {
-	position: absolute;
+	float: left;
 }
 
 .nav a {
@@ -312,7 +312,6 @@ ul.header-ul-list  li {
 .banner {
 	height: 580px;
 	min-height: 510px;
-	padding: 20px;
 }
 
 .home-banner {
@@ -342,11 +341,9 @@ ul.header-ul-list  li {
 }
 
 .banner-content-full-width {
-	position: absolute;
-	top: 125px;
+	float: left;
 	width: 100%;
 	background: rgba(0, 0, 0, 0.65);
-	left: 0;
 }
 
 .banner-content {
