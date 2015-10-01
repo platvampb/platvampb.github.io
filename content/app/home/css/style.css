@@ -198,6 +198,11 @@ button.job_readmore {
 	}
 }
 
+@media (min-width: 480px) {
+	i.show-xxs {
+		display: none;
+	}
+}
 /* nav section */
 section.header {
 	padding: 0;
@@ -305,6 +310,28 @@ ul.header-ul-list  li {
 		color: #d9534f;
 		border-color: #d9534f;
 		outline: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.nav ul.header-ul-list li a {
+		border-radius: 50%;
+		width: 60px;
+		height: 60px;
+	}
+
+	.nav li .fa-home {
+		margin-top: 2px;
+		font-size: 34px;
+	}
+
+	.nav li .fa-briefcase {
+		margin-top: 5px;
+	}
+
+	.nav li .fa-users {
+		margin-top: 6px;
+		font-size: 28px;
 	}
 }
 
