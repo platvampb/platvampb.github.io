@@ -1,34 +1,35 @@
 <div class="container">
 	<form id="contact-form" class="form-invite margin-top-15">
 		</br>
-		<section class="col-lg-10">
+		<section class="col-xs-10">
 		
 			<h2 class="lg-header">Contact Us</h2>
 			<div>
-				<input type="text" class="border-white col-xs-6" name="contact-form-name" ng-model="contact.name" placeholder="First name, Last name" required>
-				<input type="email" class="border-white col-xs-6" name="contact-form-email" ng-model="contact.email" placeholder="Your Email" required>
-			
-				</br>
-				</br>
-				
-				<input type="text" class="border-white col-xs-6" name="contact-form-number" ng-model="contact.number" placeholder="Your number (with area code)" required>
-				<input type="text" class="border-white col-xs-6" name="contact-form-title" ng-model="contact.title" placeholder="Your title">
-				
-				</br>
-				</br>
-				
-				<textarea rows="10" class="border-white full-size" name="contact-form-content" ng-model="contact.content" placeholder="Please provide details of your inquiry." required></textarea>
-
-				</br>
-				</br>
-				<button type="submit" class="btn-contact btn" ng-hide="loading" ng-disabled="inviteForm.$invalid" >
-					<span>Send</span>
-				</button>
+				<div class="col-xs-6">
+					<input type="text" class="margin-bottom-10 border-white form-control" name="contact-form-name" ng-model="contact.name" placeholder="First name, Last name" required>
+				</div>
+				<div class="col-xs-6">
+					<input type="email" class="margin-bottom-10 border-white form-control" name="contact-form-email" ng-model="contact.email" placeholder="Your Email" required>
+				</div>
+				<div class="col-xs-6">
+					<input type="text" class="margin-bottom-10 border-white form-control" name="contact-form-number" ng-model="contact.number" placeholder="Your number (with area code)" required>
+				</div>
+				<div class="col-xs-6">
+					<input type="text" class="margin-bottom-10 border-white form-control" name="contact-form-title" ng-model="contact.title" placeholder="Your title">
+				</div>
+				<div class="col-xs-12">
+					<textarea rows="10" class="margin-bottom-10 border-white form-control" name="contact-form-content" ng-model="contact.content" placeholder="Please provide details of your inquiry." required></textarea>
+				</div>
+				<div class="col-xs-6 col-xs-offset-3">
+					<button type="submit" class="margin-bottom-10 btn-contact btn col-xs-12 " ng-hide="loading" ng-disabled="inviteForm.$invalid" >
+						<span>Send</span>
+					</button>
+				</div>
 				<img ng-show="loading" src="img/assets/loading.gif"/>
 			</br>
 			</div>
 		</section>
-		<section class="col-lg-2">
+		<section class="col-xs-2">
 			<div>
 				<b>Visit us on:</b>
 				</br>
@@ -36,7 +37,7 @@
 				<ul class="no-indent">
 				<li>
 				<a >
-					<img width="20" height="20" border="0" src="img/3rdParty/wechat.png" data-toggle="modal" data-target="#wechat-qr-code-modal">
+					<img class="logo-3rd-party" src="img/3rdParty/wechat.png" data-toggle="modal" data-target="#wechat-qr-code-modal">
 				</a>
 				<div class="modal fade" id="wechat-qr-code-modal" role="dialog">
 					<img class="qr-code" src="img/3rdParty/qrcode_for_gh_43.jpg"/>
@@ -51,27 +52,27 @@
 				 -->
 				 <li>
 				<a href="https://www.linkedin.com/company/10045843?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10045843%2Cidx%3A1-1-1%2CtarId%3A1442985418223%2Ctas%3Awherego">
-					<img class="3rd-party-logo" src="img/3rdParty/linkedin.png"/>
+					<img class="logo-3rd-party" src="img/3rdParty/linkedin.png"/>
 				</a>
 				</li>
 				<li>
 				<a href="https://vimeo.com/wherego">
-					<img class="3rd-party-logo" src="img/3rdParty/vimeo.jpg"/>
+					<img class="logo-3rd-party" src="img/3rdParty/vimeo.jpg"/>
 				</a>
 				</li>
 				<li>
 				<a href="http://instagram.com/wewherego">
-					<img class="3rd-party-logo" src="img/3rdParty/instagram.png"/>
+					<img class="logo-3rd-party" src="img/3rdParty/instagram.png"/>
 				</a>
 				</li>
 				<li>
 				<a href="https://www.pinterest.com/wherego/">
-					<img class="3rd-party-logo" src="img/3rdParty/pinterest.png"/>
+					<img class="logo-3rd-party" src="img/3rdParty/pinterest.png"/>
 				</a>
 				</li>
 				<li>
 				<a class="3rd-party-logo" href="https://twitter.com/WeWherego">
-					<img class="3rd-party-logo" src="img/3rdParty/twitter.jpg"/>
+					<img class="logo-3rd-party" src="img/3rdParty/twitter.jpg"/>
 				</a>
 				</li>
 				</ul>
