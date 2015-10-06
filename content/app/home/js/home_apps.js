@@ -16,7 +16,7 @@ wheregoHomeApp.config(['$routeProvider',
 				templateUrl: 'pages/aboutus.html',
 				title:'About Wherego'
 			}).
-			when('/products', {
+			when('/', {
 					templateUrl: 'pages/products.html',
 					title:'Wherego Products',
 					navClass: 'nav-inverse',
@@ -28,10 +28,11 @@ wheregoHomeApp.config(['$routeProvider',
 			}).
 			when('/contactus', {
 				templateUrl: 'pages/contactus.html',
-				title:'Contact Wherego'
+				title:'Contact Wherego',
+				controller: 'contactCtrl'
 			}).
 			otherwise({
-				redirectTo: '/products'
+				redirectTo: '/'
 			});
 	}]);
 

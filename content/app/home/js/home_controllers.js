@@ -51,37 +51,34 @@ homeControllers.controller('WGProductsCtrl', ['$scope', '$http', 'subscribeServi
 
 homeControllers.controller('contactCtrl', ['$scope', '$http', 'contactEmailService', function($scope, $http, contactEmailService) {
 	$scope.submitted = false;
-	$scope.loading = false;
+	$scope.contactLoading = false;
 	$scope.result = {};
 	$scope.contact = {};
 
-	$scope.submitForm = function(isValid, inviteForm) {
-
+	$scope.submitForm = function(isValid, contactForm) {
 		$scope.submitted = true;
-
+		$scope.result.conactSuccess = false;
+		$scope.result.serverError = false;
 		if (isValid) {
-			$scope.loading = true;
-			contactEmailService.submit($scope.contact).
-				then (function(response) {
-					var data = response.data;
-					if (data.result === true) {
-						$scope.result.success = true;
-					} else if (data.message == "SequelizeUniqueConstraintError") {
-						$scope.result.exists = true;
-					} else {
-						inviteForm.email.$setValidity('email', false);
-					}
-					$scope.loading = false;
-				}, function(response) {
-					$scope.loading = false;
+			$scope.contactLoading = true;
+			contactEmailService.submit($scope.contact)
+			.then (function(response) {
+				var data = response.data;
+				if (data.result === true) {
+					$scope.result.conactSuccess = true;
+				} else {
 					$scope.result.serverError = true;
-				});
+				}
+				$scope.contactLoading = false;
+			}, function(response) {
+				$scope.contactLoading = false;
+				$scope.result.serverError = true;
+			});
 		}
 	};
-
-	$scope.validate = function (field, inviteForm) {
-		inviteForm[field].$validate();
-		$scope.result.serverError = false;
+	
+	$scope.validate = function(field, contactForm) {
+		contactForm[field].$validate();
 	};
 }]);
 

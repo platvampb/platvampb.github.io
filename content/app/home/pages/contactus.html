@@ -1,32 +1,40 @@
 <div class="container">
-	<form id="contact-form" class="form-invite margin-top-15">
-		</br>
+	<form id="contactForm" name="contactForm" ng-submit="submitForm(contactForm.$valid, contactForm)" novalidate="novalidate" class="form-invite margin-top-15">
 		<section class="col-xs-10">
-		
 			<h2 class="lg-header">Contact Us</h2>
-			<div>
-				<div class="col-xs-6">
-					<input type="text" class="margin-bottom-10 border-white form-control" name="contact-form-name" ng-model="contact.name" placeholder="First name, Last name" required>
-				</div>
-				<div class="col-xs-6">
-					<input type="email" class="margin-bottom-10 border-white form-control" name="contact-form-email" ng-model="contact.email" placeholder="Your Email" required>
-				</div>
-				<div class="col-xs-6">
-					<input type="text" class="margin-bottom-10 border-white form-control" name="contact-form-number" ng-model="contact.number" placeholder="Your number (with area code)" required>
-				</div>
-				<div class="col-xs-6">
-					<input type="text" class="margin-bottom-10 border-white form-control" name="contact-form-title" ng-model="contact.title" placeholder="Your title">
-				</div>
-				<div class="col-xs-12">
-					<textarea rows="10" class="margin-bottom-10 border-white form-control" name="contact-form-content" ng-model="contact.content" placeholder="Please provide details of your inquiry." required></textarea>
-				</div>
-				<div class="col-xs-6 col-xs-offset-3">
-					<button type="submit" class="margin-bottom-10 btn-contact btn col-xs-12 " ng-hide="loading" ng-disabled="inviteForm.$invalid" >
-						<span>Send</span>
-					</button>
-				</div>
-				<img ng-show="loading" src="img/assets/loading.gif"/>
-			</br>
+			<div ng-messages="result" ng-if="submitted" class="help-block">
+				<span ng-message="serverError" class="form-response-error"><p>Ops, something happened on our side and your inquiry couldn't be processed :( Could you please try again? </p></span>
+				<span ng-message="conactSuccess" class="form-response-success"><p>Your inquiry has been processed, we will get back to you as soon as possible :) </p></span>
+			</div>
+			<div class="col-xs-6">
+				<input type="text" class="margin-bottom-10 border-white form-control" name="name" ng-model="contact.name" placeholder="First name, Last name" required>
+			</div>
+			<div class="col-xs-6">
+				<input type="email" class="margin-bottom-10 border-white form-control" name="email" ng-model="contact.email" placeholder="Your email" required>
+			</div>
+			<div class="col-xs-6">
+				<input type="text" class="margin-bottom-10 border-white form-control" name="number" ng-model="contact.number" placeholder="Your number (with area code)" required>
+			</div>
+			<div class="col-xs-6">
+				<input type="text" class="margin-bottom-10 border-white form-control" name="title" ng-model="contact.title" placeholder="Your title">
+			</div>
+			<div class="col-xs-12">
+				<textarea rows="10" class="margin-bottom-10 border-white form-control" name="content" ng-model="contact.content" placeholder="Please provide details of your inquiry." required></textarea>
+			</div>
+			<div class="col-xs-4 col-xs-offset-4">
+				<span style="color:red" ng-show="contactForm.name.$touched && contactForm.name.$error.required">
+					<span><p>Please provide your name.</p></span>
+				</span>
+				<span style="color:red" ng-show="contactForm.number.$touched && contactForm.email.$invalid">
+					<span ng-show="contactForm.email.$error.required || contactForm.$error.email"><p>Please provide a valid email.</p></span>
+				</span>
+				<span style="color:red" ng-show="contactForm.number.$touched && contactForm.number.$error.required">
+					<span ><p>Please provide your phone number.</p></span>
+				</span>
+				<button type="submit" class="margin-bottom-10 btn-contact btn col-xs-12 " ng-hide="contactLoading" ng-disabled="contactForm.$invalid" >
+					<span><font size=5>Send</font></span>
+				</button>
+				<img ng-show="contactLoading" src="img/assets/loading.gif"/>
 			</div>
 		</section>
 		<section class="col-xs-2">

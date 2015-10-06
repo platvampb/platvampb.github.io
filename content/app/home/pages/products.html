@@ -71,9 +71,9 @@
 			<div class="invite-form-container">
 				<form name="inviteForm" novalidate="novalidate" ng-submit="submitForm(inviteForm.$valid, inviteForm)" class="form-invite ng-pristine ng-valid margin-top-15"
 				ng-class="{ 'has-error': inviteForm.$invalid && submitted}">
-					<div ng-messages="result" ng-if="submitted" class="help-block form-response">
-						<span ng-message="success">You have successfully subscribed with email {{user.email}}!</span>
-						<span ng-message="emailExists">You are already subscribed with email {{user.email}}!</span>
+					<div ng-messages="result" ng-if="submitted" class="help-block">
+						<span class="form-response-success" ng-message="success">You have successfully subscribed with email {{user.email}}!</span>
+						<span class="form-response-success" ng-message="emailExists">You are already subscribed with email {{user.email}}!</span>
 					</div>
 					<div class="row margin-top-10" ng-show="!result.success && !result.emailExists">
 						<div class="form-group col-sm-12 margin-bottom-25" ng-class="{ 'has-error': inviteForm.email.$invalid && inviteForm.email.$touched}">
