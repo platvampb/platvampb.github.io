@@ -4,7 +4,6 @@ h1, h2, h3, h4, h5, h6 {
 
 p, div {
 	font-family: "Open Sans",Arial,sans-serif;
-	text-align: justify;
 }
 
 a {
@@ -26,6 +25,10 @@ a.inverse-link:focus {
 	color: #d9534f;
 	text-decoration: none;
 	outline: none;
+}
+
+p.team-member-intro {
+	text-align: justify;
 }
 
 .clearfix:after {
@@ -512,7 +515,7 @@ section.products {
 	width: 480px;
 }
 
-.form-invite .form-contact {
+.form-invite, .form-contact {
 	margin-bottom: 10px;
 }
 
@@ -522,7 +525,7 @@ section.products {
 	margin-top: 0;
 }
 
-.form-invite .email .form-contact {
+.form-invite .email, .form-contact .email {
 	background: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -534,7 +537,7 @@ section.products {
 	margin-right: 6px;
 }
 
-.form-invite .form-contact .btn {
+.form-invite .btn, .form-contact .btn {
 	padding-top: 15px;
 	padding-bottom: 15px;
 	vertical-align: top;
@@ -544,13 +547,14 @@ section.products {
 	border-radius: 3px;
 }
 
-.form-invite .form-contact .help-block {
+.form-invite .help-block {
 	font-size: 14px;
 	font-weight: bold;
 }
 
-.form-invite .form-contact .help-block {
+.form-contact .help-block {
 	font-size: 18px;
+	font-weight: bold;
 }
 
 .form-response-error {
