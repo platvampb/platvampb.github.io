@@ -736,6 +736,11 @@ section.mission-statement {
 	float: right;
 }
 
+@media (max-width: 480px) {
+	.btn-join-us {
+		float: none;
+	}
+}
 /*contact us section */
 .full-size {
 	width: 100%;
