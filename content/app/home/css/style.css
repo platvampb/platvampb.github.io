@@ -27,6 +27,10 @@ a.inverse-link:focus {
 	outline: none;
 }
 
+p.team-member-intro {
+	text-align: justify;
+}
+
 .clearfix:after {
 	clear:both;
 }
@@ -180,11 +184,6 @@ input.border-white:focus, input.border-white:hover {
 	box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.075), 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
-
-button.job_readmore {
-	background-image:url("../img/button_white.jpg");
-}
-
 .btn {
 	-webkit-font-smoothing: antialiased;
 }
@@ -253,12 +252,6 @@ li.header-list {
 	margin-right: 20px;
 }
 
-li.header-list-end {
-	padding-right: 5px;
-	float:right;
-	overflow: hidden;
-}
-
 ul.header-ul-list {
 	font-family: inherit;
 	font-size: 18px;
@@ -316,22 +309,32 @@ ul.header-ul-list  li {
 @media (max-width: 480px) {
 	.nav ul.header-ul-list li a {
 		border-radius: 50%;
-		width: 60px;
-		height: 60px;
+		width: 50px;
+		height: 50px;
 	}
 
 	.nav li .fa-home {
-		margin-top: 2px;
-		font-size: 34px;
-	}
-
-	.nav li .fa-briefcase {
-		margin-top: 5px;
+		font-size: 30px;
+		margin-left: -2px;
+		margin-top: 1px;
 	}
 
 	.nav li .fa-users {
-		margin-top: 6px;
-		font-size: 28px;
+		font-size: 22px;
+		margin-top: 5px;
+		margin-left: -1px;
+	}
+
+	.nav li .fa-briefcase {
+		font-size: 26px;
+		margin-top: 5px;
+		margin-left: -2px;
+	}
+
+	.nav li .fa-info {
+		font-size: 26px;
+		margin-top: 4px;
+		margin-left: 1px;
 	}
 }
 
@@ -516,7 +519,7 @@ section.products {
 	width: 480px;
 }
 
-.form-invite {
+.form-invite, .form-contact {
 	margin-bottom: 10px;
 }
 
@@ -526,7 +529,7 @@ section.products {
 	margin-top: 0;
 }
 
-.form-invite .email{
+.form-invite .email, .form-contact .email {
 	background: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -538,7 +541,9 @@ section.products {
 	margin-right: 6px;
 }
 
-.form-invite .btn {
+.form-invite .btn, .form-contact .btn {
+	padding-top: 15px;
+	padding-bottom: 15px;
 	vertical-align: top;
 	padding: 12px 24px;
 	font-size: 18px;
@@ -551,12 +556,22 @@ section.products {
 	font-weight: bold;
 }
 
-.form-invite .help-block.form-response {
+.form-contact .help-block {
 	font-size: 18px;
-	color: #d9534f;
+	font-weight: bold;
 }
 
-.form-invite .help-block.form-response span {
+.form-response-error {
+	color: #d9534f;
+	font-size: 18px;
+}
+
+.form-response-success {
+	color: #33cc33;
+	font-size: 18px;
+}
+
+.form-invite .form-contact .help-block.form-response span {
 	border-bottom: solid 1px;
 }
 
@@ -570,7 +585,6 @@ button {
 }
 
 .footer-list {
-	position: absolute;
 	bottom: 20px;
 	right: 0px;
 	width: 100%;
@@ -662,7 +676,7 @@ p.fa-container-sm {
 	font-weight: bold;
 }
 
-/* About us header section */
+/* About us section */
 .slogan {
 	background: #33aecc;
 	color: #E0E0E0;
@@ -716,4 +730,58 @@ section.mission-statement {
 .team-member-title {
 	color: #acacac;
 	margin-bottom: 15px;
+}
+
+.btn-join-us {
+	float: right;
+}
+
+@media (max-width: 480px) {
+	.btn-join-us {
+		float: none;
+	}
+}
+/*contact us section */
+.full-size {
+	width: 100%;
+}
+
+button.btn-contact {
+	background-image:url('../img/button_logo_color.jpg');
+	background-repeat:repeat-x;
+	color: white;
+}
+
+button.wechat-qr-code {
+	background-image:url('../img/3rdParty/wechat.png');
+	background-repeat:no-repeat;
+}
+
+ul.no-indent {
+	list-style:none;
+	padding-left: 0;
+}
+
+div.main-box {
+	margin-bottom: 10px;
+}
+
+img.qr-code {
+	height: 172px;
+	width: 172px;
+	border: 0;
+}
+
+img.logo-3rd-party {
+	height: 20px;
+	width: 20px;
+}
+
+font.contact-send-button {
+	size: 8;
+}
+
+#wechat-qr-code-modal {
+	top:5%;
+	right:0%;
 }

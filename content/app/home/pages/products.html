@@ -71,9 +71,9 @@
 			<div class="invite-form-container">
 				<form name="inviteForm" novalidate="novalidate" ng-submit="submitForm(inviteForm.$valid, inviteForm)" class="form-invite ng-pristine ng-valid margin-top-15"
 				ng-class="{ 'has-error': inviteForm.$invalid && submitted}">
-					<div ng-messages="result" ng-if="submitted" class="help-block form-response">
-						<span ng-message="success">You have successfully subscribed with email {{user.email}}!</span>
-						<span ng-message="emailExists">You are already subscribed with email {{user.email}}!</span>
+					<div ng-messages="result" ng-if="submitted" class="help-block">
+						<span class="form-response-success" ng-message="success">You have successfully subscribed with email {{user.email}}!</span>
+						<span class="form-response-success" ng-message="emailExists">You are already subscribed with email {{user.email}}!</span>
 					</div>
 					<div class="row margin-top-10" ng-show="!result.success && !result.emailExists">
 						<div class="form-group col-sm-12 margin-bottom-25" ng-class="{ 'has-error': inviteForm.email.$invalid && inviteForm.email.$touched}">
@@ -99,7 +99,7 @@
 					<div class="row" ng-show="!result.success && !result.emailExists">
 						<div class="form-group col-xs-12 text_left">
 							<span class="privacy-text">
-								By clicking Subscirbe, you agree to our <a href="docs/WhereGoUserAgreement_v1.pdf" target="_blank">User Agreement</a> and <a href="docs/WhereGo_Privacy_v1.pdf" target="_blank">Privacy Policy</a>.
+								<font color="red">***</font>by clicking the Subscribe button below, you agree to receive electronic messages from Wherego LTD and its affiliates, including information about our services and offers. You also agreed to our <a href="docs/WhereGoUserAgreement_v1.pdf" target="_blank">User Agreement</a> and <a href="docs/WhereGo_Privacy_v1.pdf" target="_blank">Privacy Policy</a>. You may withdraw your consent at any time. For information on how we may collect and use your personal information, please visit our Privacy Policy or Contact Us for further inquiries.
 							</span>
 						</div>
 						<!--div ng-messages="inviteForm.privacyCheckboc.$error" ng-if="submitted" class="help-block">
@@ -111,10 +111,5 @@
 					</div>
 				</form>
 			</div>
-		</div>
-
-		<div ng-controller="metaCrl">
-			<br>
-			<div class="footer-list"><p id="id_footer" style="text-align:right;margin-right:5%">{{metadata.meta_version}}</p></div>
 		</div>
 	</section>

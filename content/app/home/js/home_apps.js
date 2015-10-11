@@ -5,7 +5,7 @@ var wheregoHomeApp = angular.module('HomeApp',
 		'ngAnimate',
 		'ngMessages',
 		'ui.bootstrap',
-		'HomeControllers',
+		'homeControllers',
 		'metadataControllers'
 	]);
 
@@ -14,19 +14,25 @@ wheregoHomeApp.config(['$routeProvider',
 		$routeProvider.
 			when('/aboutus', {
 				templateUrl: 'pages/aboutus.html',
-				title:'about wherego'
+				title:'About Wherego'
 			}).
-			when('/products', {
+			when('/', {
 					templateUrl: 'pages/products.html',
-					title:'wherego products',
-					navClass: 'nav-inverse'
+					title:'Wherego Products',
+					navClass: 'nav-inverse',
+					controller: 'WGProductsCtrl'
 				}).
 			when('/career', {
 				templateUrl: 'pages/career.html',
 				title:'looking for a senior software engineer - join us as partner!'
 			}).
+			when('/contactus', {
+				templateUrl: 'pages/contactus.html',
+				title:'Contact Wherego',
+				controller: 'contactCtrl'
+			}).
 			otherwise({
-				redirectTo: '/products'
+				redirectTo: '/'
 			});
 	}]);
 

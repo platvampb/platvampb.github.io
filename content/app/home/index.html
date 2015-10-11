@@ -17,6 +17,7 @@
 	<script src="js/angular_core/angular-messages.min.v.1.4.5.js"></script>
 	<script src="js/angular_core/angular-animate.min.v.1.4.5.js"></script>
 	<script src="js/angular_ui/ui-bootstrap-tpls.min.v.0.13.4.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="js/home_apps.js"></script>
 	<script src="js/home_controllers.js"></script>
 	<script src="js/career_controllers.js"></script>
@@ -33,7 +34,7 @@
 	</script>
 </head>
 
-<body ng-controller="WGHomeLanCtrl">
+<body>
 	<!--[if lt IE 7]>
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	<![endif]-->
@@ -61,6 +62,11 @@
 							<span class="hidden-xxs">join us</span>
 							<i class="fa fa-briefcase show-xxs fa-2x"></i>
 						</a></li>
+					<li id="id_contactus" class="header-list">
+						<a href="#contactus">
+							<span class="hidden-xxs">contact us</span>
+							<i class="fa fa-info show-xxs fa-2x"></i>
+						</a></li>
 				</ul>
 			</div>
 			</div>
@@ -68,5 +74,10 @@
 
 		<div ng-view=""></div>
 	</div>
+	
+		<div ng-controller="metaCtrl">
+			<br>
+			<div class="footer-list"><p id="id_footer" style="text-align:right;margin-right:5%">{{metadata.meta_version}}</p></div>
+		</div>
 </body>
 </html>

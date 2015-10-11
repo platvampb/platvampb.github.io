@@ -2,9 +2,9 @@ function readCookie(name) {
 		return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
 }
 
-var HomeControllers = angular.module('HomeControllers', []);
+var homeControllers = angular.module('homeControllers', []);
 
-HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', 'subscribeService', function($scope, $http, subscribeService) {
+homeControllers.controller('WGProductsCtrl', ['$scope', '$http', 'subscribeService', function($scope, $http, subscribeService) {
 
 	$scope.submitted = false;
 	$scope.loading = false;
@@ -49,16 +49,43 @@ HomeControllers.controller('WGHomeLanCtrl', ['$scope', '$http', 'subscribeServic
 	};
 }]);
 
+homeControllers.controller('contactCtrl', ['$scope', '$http', 'contactEmailService', function($scope, $http, contactEmailService) {
+	$scope.submitted = false;
+	$scope.contactLoading = false;
+	$scope.result = {};
+	$scope.contact = {};
+
+	$scope.submitForm = function(isValid, contactForm) {
+		$scope.submitted = true;
+		$scope.result.conactSuccess = false;
+		$scope.result.serverError = false;
+		if (isValid) {
+			$scope.contactLoading = true;
+			contactEmailService.submit($scope.contact)
+			.then (function(response) {
+				var data = response.data;
+				if (data.result === true) {
+					$scope.result.conactSuccess = true;
+				} else {
+					$scope.result.serverError = true;
+				}
+				$scope.contactLoading = false;
+			}, function(response) {
+				$scope.contactLoading = false;
+				$scope.result.serverError = true;
+			});
+		}
+	};
+	
+	$scope.validate = function(field, contactForm) {
+		contactForm[field].$validate();
+	};
+}]);
+
 var metadataControllers = angular.module('metadataControllers', []);
 
-metadataControllers.controller('metaCrl', function($scope, $http) {
+metadataControllers.controller('metaCtrl', function($scope, $http) {
 	$http.get("metadata.json").success(function(data) {
 		$scope.metadata = data;
 	});
-});
-
-var LoginControllers = angular.module('LoginControllers', []);
-
-HomeControllers.controller('loginCrl', function($scope) {
-	$scope.email='abc';
 });
