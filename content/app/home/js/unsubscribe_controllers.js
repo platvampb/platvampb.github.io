@@ -1,23 +1,27 @@
-wheregoHomeApp.controller('unsubscribeCtrl', ['$scope', '$routeParams', function($scope, $routeParams){
+wheregoHomeApp.controller('unsubscribeCtrl', ['$scope', '$routeParams', 'unsubscribeService', function($scope, $routeParams, unsubscribeService){
 	//$scope.email = $routeParams.email;
 	$scope.submitted = false;
 	$scope.loading = false;
+	$scope.notSubscribed = false;
 	$scope.result = {};
-	$scope.user = {};
+	$scope.user = {
+		email: $routeParams.email
+	};
 
-	$scope.unsubscribe = function() {
+	$scope.unsubscribe = function(isValid, unsubscribeForm) {
 
-		if ($scope.email) {
+		if ($scope.user.email) {
 			$scope.loading = true;
-			subscribeService.submit($scope.email).
+			$scope.submitted = true;
+			unsubscribeService.submit($scope.user.email).
 				then (function(response) {
 					var data = response.data;
 					if (data.result === true) {
-						$scope.success = true;
-					} else if (data.message == "SequelizeUniqueConstraintError") {
-						$scope.emailDNE = true;
+						$scope.result.success = true;
+					} else if (data.data == "userNotFound" || data.data == "userNotSubscribed") {
+						$scope.result.notSubscribed = true;
 					} else {
-						inviteForm.email.$setValidity('email', false);
+						$scope.result.serverError = true;
 					}
 					$scope.loading = false;
 				}, function(response) {

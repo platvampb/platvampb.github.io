@@ -22,10 +22,11 @@ homeControllers.controller('WGProductsCtrl', ['$scope', '$http', 'subscribeServi
 					var data = response.data;
 					if (data.result === true) {
 						$scope.result.success = true;
-					} else if (data.message == "SequelizeUniqueConstraintError") {
+					} else if (data.data == "userExists") {
 						$scope.result.emailExists = true;
+						$scope.result.serverError = true;
 					} else {
-						inviteForm.email.$setValidity('email', false);
+						$scope.result.serverError = true;
 					}
 					$scope.loading = false;
 				}, function(response) {
@@ -76,7 +77,7 @@ homeControllers.controller('contactCtrl', ['$scope', '$http', 'contactEmailServi
 			});
 		}
 	};
-	
+
 	$scope.validate = function(field, contactForm) {
 		contactForm[field].$validate();
 	};

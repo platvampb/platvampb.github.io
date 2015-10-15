@@ -31,9 +31,9 @@ wheregoHomeApp.config(['$routeProvider',
 				title:'Contact Wherego',
 				controller: 'contactCtrl'
 			}).
-			when('/unsubscribe', {
+			when('/unsubscribe/:email', {
 				templateUrl: 'pages/unsubscribe.html',
-				title:'unsubscribe from Wherego mailing list',
+				title:'unsubscribe from Wherego mailing list'
 			}).
 			otherwise({
 				redirectTo: '/'
