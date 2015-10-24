@@ -590,10 +590,6 @@ button {
 	width: 100%;
 }
 
-.server-error p {
-	color: #a94442;
-}
-
 .email-error {
 	position: absolute;
 }

@@ -18,8 +18,6 @@ wheregoHomeApp.controller('unsubscribeCtrl', ['$scope', '$routeParams', 'unsubsc
 					var data = response.data;
 					if (data.result === true) {
 						$scope.result.success = true;
-					} else if (data.data == "userNotFound" || data.data == "userNotSubscribed") {
-						$scope.result.notSubscribed = true;
 					} else {
 						$scope.result.serverError = true;
 					}

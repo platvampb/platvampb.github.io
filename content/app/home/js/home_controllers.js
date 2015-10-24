@@ -22,9 +22,6 @@ homeControllers.controller('WGProductsCtrl', ['$scope', '$http', 'subscribeServi
 					var data = response.data;
 					if (data.result === true) {
 						$scope.result.success = true;
-					} else if (data.data == "userExists") {
-						$scope.result.emailExists = true;
-						$scope.result.serverError = true;
 					} else {
 						$scope.result.serverError = true;
 					}
