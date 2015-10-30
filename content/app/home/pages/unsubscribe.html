@@ -1,0 +1,36 @@
+	<section class="unsubscribe">
+		<div class="banner-content gray-bg clearfix" ng-controller="unsubscribeCtrl">
+			<p class="paragraph-header">Unsubscribe from Wherego Newsletter</p>
+			<div class="unsubscribe-form-container col-sm-6 col-sm-offset-3">
+				<form name="unsubscribeForm" novalidate="novalidate" ng-submit="unsubscribe(unsubscribeForm.$valid, unsubscribeForm)" class="form-unsubscribe ng-pristine ng-valid margin-top-15"
+					ng-class="{ 'has-error': unsubscribeForm.$invalid && submitted }">
+					<div ng-messages="result" ng-if="submitted" class="help-block form-response">
+						<span class="form-response-success" ng-message="success">You email {{user.email}} has been successfully unsubscribed! We will miss you.</span>
+						<span class="form-response-error" ng-message="notSubscribed">The email {{user.email}} is not currently subscribed to us.</span>
+					</div>
+					<div class="row margin-top-10" ng-show="!result.success && !result.notSubscribed">
+						<div class="form-group col-sm-12 margin-bottom-25" ng-class="{ 'has-error': unsubscribeForm.email.$invalid}">
+							<input id="subscriberEmail" type="email" name="email" placeholder="email@address.com" class="border-white email form-control"
+								required
+								ng-model="user.email">
+
+							<div ng-messages="unsubscribeForm.email.$error" class="help-block email-error">
+								<span ng-message="required">Please enter a valid email.</span>
+							</div>
+						</div>
+					</div>
+					<div class="row margin-top-10" ng-show="!result.success && !result.notSubscribed">
+						<div class="form-group col-xs-12 margin-bottom-10">
+							<button type="submit" class="btn btn-danger btn-lg col-xs-12" ng-hide="loading" ng-disabled="unsubscribeForm.$invalid" >
+								<span>Unsubscribe</span>
+							</button>
+							<img ng-show="loading" src="img/assets/loading.gif"/>
+						</div>
+					</div>
+					<div ng-messages="result" ng-if="submitted" class="server-error help-block">
+						<p ng-message="serverError">We are sorry. Something went wrong. Please try again later.</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>

@@ -2,6 +2,7 @@ wheregoHomeApp
 	.constant('meeDomain', 'http://wherego-mee.azurewebsites.net')
 	.constant('subscribeApi', '/users/subscribe')
 	.constant('sendContactEmailApi', '/contact')
+	.constant('unsubscribeApi', '/users/unsubscribe')
 	.factory('subscribeService', ['$http', 'meeDomain', 'subscribeApi', function($http, meeDomain, subscribeApi) {
 		var obj = {
 			success: false,
@@ -24,6 +25,18 @@ wheregoHomeApp
 						'content': contactData
 					});
 				}
+		};
+		return obj;
+	}])
+	.factory('unsubscribeService', ['$http', 'meeDomain', 'unsubscribeApi', function($http, meeDomain, unsubscribeApi) {
+		var obj = {
+			success: false,
+			errorMessage: '',
+			submit: function(email) {
+				return $http.post(meeDomain + unsubscribeApi, {
+					'email': email
+				});
+			}
 		};
 		return obj;
 	}]);

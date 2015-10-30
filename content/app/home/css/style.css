@@ -529,7 +529,7 @@ section.products {
 	margin-top: 0;
 }
 
-.form-invite .email, .form-contact .email {
+.form-invite .email, .form-contact .email, .form-unsubscribe .email{
 	background: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -567,11 +567,11 @@ section.products {
 }
 
 .form-response-success {
-	color: #33cc33;
+	color: #178c3f;
 	font-size: 18px;
 }
 
-.form-invite .form-contact .help-block.form-response span {
+.form-invite .help-block.form-response span, .form-contact .help-block.form-response span {
 	border-bottom: solid 1px;
 }
 
@@ -588,10 +588,6 @@ button {
 	bottom: 20px;
 	right: 0px;
 	width: 100%;
-}
-
-.server-error p {
-	color: #a94442;
 }
 
 .email-error {
@@ -784,4 +780,9 @@ font.contact-send-button {
 #wechat-qr-code-modal {
 	top:5%;
 	right:0%;
+}
+
+/*unsubscribe section*/
+.unsubscribe .banner-content {
+	color: #333;
 }

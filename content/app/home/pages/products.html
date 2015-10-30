@@ -74,6 +74,7 @@
 					<div ng-messages="result" ng-if="submitted" class="help-block">
 						<span class="form-response-success" ng-message="success">You have successfully subscribed with email {{user.email}}!</span>
 						<span class="form-response-success" ng-message="emailExists">You are already subscribed with email {{user.email}}!</span>
+						<span class="form-response-error" ng-message="serverError">Something went wrong. Please try again later.</p>
 					</div>
 					<div class="row margin-top-10" ng-show="!result.success && !result.emailExists">
 						<div class="form-group col-sm-12 margin-bottom-25" ng-class="{ 'has-error': inviteForm.email.$invalid && inviteForm.email.$touched}">
@@ -82,9 +83,9 @@
 								ng-change="validate('email', inviteForm)"
 								ng-model="user.email"
 								ng-pattern="/^.{1,}@[_a-z0-9A-Z]+(\.[a-z0-9A-Z]+)+$/">
-
 							<div ng-messages="inviteForm.email.$error" ng-if="inviteForm.email.$touched" class="help-block email-error">
 								<span ng-message="pattern required">Please enter a valid email.</span>
+								<span ng-message="">Please enter a valid email.</span>
 							</div>
 						</div>
 					</div>
@@ -105,9 +106,6 @@
 						<!--div ng-messages="inviteForm.privacyCheckboc.$error" ng-if="submitted" class="help-block">
 							<p ng-message="privacyCheckbox required">Please check to receive our updates.</p>
 						</div-->
-					</div>
-					<div ng-messages="result" ng-if="submitted" class="server-error help-block">
-						<p ng-message="serverError">Something went wrong. Please try again later.</p>
 					</div>
 				</form>
 			</div>
