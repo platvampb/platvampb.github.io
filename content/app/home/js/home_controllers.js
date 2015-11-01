@@ -12,6 +12,12 @@ homeControllers.controller('WGProductsCtrl', ['$scope', '$http', 'subscribeServi
 	$scope.user = {};
 
 	//initialize boostrap select
+	$('.selectpicker').selectpicker();
+	$('.dropdown-menu a').click(function(event){
+		$('.bootstrap-select').removeClass('open');
+		$('.bootstrap-select .dropdown-toggle').addClass('selected');
+	});
+
 	$scope.submitForm = function(isValid, inviteForm) {
 
 		$scope.submitted = true;
