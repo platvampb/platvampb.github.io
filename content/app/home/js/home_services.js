@@ -1,11 +1,16 @@
 wheregoHomeApp
-	.factory('subscribeService', ['$http', 'siteConfig', function($http, siteConfig) {
+	.factory('subscribeService', ['$http', 'meeDomain', 'subscribeApi', function($http, meeDomain, subscribeApi) {
 		var obj = {
 			success: false,
 			errorMessage: '',
-			submit: function(email) {
+			submit: function(user) {
 				return $http.post(siteConfig.apiEndpoint.mee + siteConfig.apiPath.subscribe, {
-					'email': email
+					'userInfo': {
+						'email': user.email,
+						'painPoint': user.painPoint[0],
+						'dreamCity': user.dreamCity,
+						'fullName': user.fullName,
+					}
 				});
 			}
 		};

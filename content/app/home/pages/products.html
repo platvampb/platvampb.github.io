@@ -70,23 +70,62 @@
 			<div class="invite-form-container">
 				<form name="inviteForm" novalidate="novalidate" ng-submit="submitForm(inviteForm.$valid, inviteForm)" class="form-invite ng-pristine ng-valid margin-top-15"
 				ng-class="{ 'has-error': inviteForm.$invalid && submitted}">
-					<div ng-messages="result" ng-if="submitted" class="help-block">
-						<span class="form-response-success" ng-message="success">You have successfully subscribed with email {{user.email}}!</span>
-						<span class="form-response-success" ng-message="emailExists">You are already subscribed with email {{user.email}}!</span>
-						<span class="form-response-error" ng-message="serverError">Something went wrong. Please try again later.</p>
+					<div class="row margin-top-10" ng-show="!result.success">
+						<div class="form-group col-sm-12 margin-bottom-25" ng-class="{ 'has-error': inviteForm.fullName.$invalid && inviteForm.fullName.$touched}">
+							<label for="fullName">Full Name</label>
+							<input type="text" id="fullName" name="fullName" placeholder="John Doe" class="border-white form-control transparent-input"
+								required
+								ng-change="validate('fullName', inviteForm)"
+								ng-model="user.fullName">
+							<div ng-messages="inviteForm.fullName.$error" ng-if="inviteForm.fullName.$touched" class="help-block inline-error">
+								<span ng-message="required">Please provide a name that we can greet you by</span>
+							</div>
+						</div>
 					</div>
-					<div class="row margin-top-10" ng-show="!result.success && !result.emailExists">
+					<div class="row margin-top-10" ng-show="!result.success">
+						<div class="form-group col-sm-12 margin-bottom-25" ng-class="{ 'has-error': inviteForm.dreamCity.$invalid && inviteForm.dreamCity.$touched}">
+							<label for="dreamCity">What's your dream town to visit?</label>
+							<input type="text" id="dreamCity" name="dreamCity" placeholder="e.g. Paris" class="border-white form-control transparent-input"
+								required
+								ng-change="validate('dreamCity', inviteForm)"
+								ng-model="user.dreamCity">
+							<div ng-messages="inviteForm.dreamCity.$error" ng-if="inviteForm.dreamCity.$touched" class="help-block inline-error">
+								<span ng-message="required">Please tell us the place you want to visit the most</span>
+							</div>
+						</div>
+					</div>
+					<div class="row margin-top-10" ng-show="!result.success">
+						<div class="form-group col-sm-12 margin-bottom-25" ng-class="{ 'has-error': inviteForm.painPoint.$invalid && inviteForm.painPoint.$touched}">
+							<label for="painPoint">Which phase of your travels can we help the most?</label>
+							<select id="painPoint" name="painPoint" class="border-white form-control selectpicker"
+								title="Please select one:"
+								multiple data-max-options="1"
+								required
+								ng-change="validate('painPoint', inviteForm)"
+								ng-model="user.painPoint">
+								<option value="inspiration">Finding inspirations</option>
+								<option value="planning">Planning the trip</option>
+								<option value="exploring">Exploring on the spot</option>
+							</select>
+						</div>
+					</div>
+					<div class="row margin-top-10" ng-show="!result.success">
 						<div class="form-group col-sm-12 margin-bottom-25" ng-class="{ 'has-error': inviteForm.email.$invalid && inviteForm.email.$touched}">
-							<input id="subscriberEmail" type="email" name="email" placeholder="email@address.com" class="border-white email form-control"
+							<label for="painPoint">Email Address</label>
+							<input id="subscriberEmail" type="email" name="email" placeholder="email@address.com" class="border-white transparent-input form-control"
 								required
 								ng-change="validate('email', inviteForm)"
 								ng-model="user.email"
 								ng-pattern="/^.{1,}@[_a-z0-9A-Z]+(\.[a-z0-9A-Z]+)+$/">
-							<div ng-messages="inviteForm.email.$error" ng-if="inviteForm.email.$touched" class="help-block email-error">
+							<div ng-messages="inviteForm.email.$error" ng-if="inviteForm.email.$touched" class="help-block inline-error">
 								<span ng-message="pattern required">Please enter a valid email.</span>
 								<span ng-message="">Please enter a valid email.</span>
 							</div>
 						</div>
+					</div>
+					<div ng-messages="result" ng-if="submitted" class="help-block">
+						<span class="form-response-success" ng-message="success">You have successfully subscribed with email {{user.email}}!</span>
+						<span class="form-response-error" ng-message="serverError">Something went wrong. Please try again later.</p>
 					</div>
 					<div class="row margin-top-10" ng-show="!result.success && !result.emailExists">
 						<div class="form-group col-xs-12 margin-bottom-10">

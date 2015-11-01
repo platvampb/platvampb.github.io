@@ -18,6 +18,19 @@ section {
 	color: #d9534f;
 }
 
+::-webkit-input-placeholder {
+   color: #777 !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: #777 !important;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #777 !important;
+}
+:-ms-input-placeholder {
+   color: #777 !important;
+}
+
 a.orange-link,
 a.inverse-link:hover,
 a.inverse-link:active,
@@ -548,7 +561,11 @@ section.products {
 	margin-top: 0;
 }
 
-.form-invite .email, .form-contact .email, .form-unsubscribe .email{
+.form-invite .form-group {
+	text-align: left;
+}
+
+.form-invite .bootstrap-select, .form-invite .bootstrap-select .btn, .form-invite .transparent-input, .form-contact .email, .form-unsubscribe .email{
 	background: transparent;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -560,6 +577,18 @@ section.products {
 	margin-right: 6px;
 }
 
+.form-invite .dropdown-menu.inner {
+	font-size: 18px;
+}
+
+.form-invite .dropdown-toggle.btn {
+	color: #777;
+}
+
+.form-invite .dropdown-toggle.selected {
+	color: #333;
+}
+
 .form-invite .btn, .form-contact .btn {
 	padding-top: 15px;
 	padding-bottom: 15px;
@@ -568,6 +597,12 @@ section.products {
 	font-size: 18px;
 	line-height: 1.34;
 	border-radius: 3px;
+}
+
+.form-invite label {
+	font-size: 18px;
+	color: #333;
+	font-weight: normal;
 }
 
 .form-invite .help-block {
@@ -609,7 +644,7 @@ button {
 	width: 100%;
 }
 
-.email-error {
+.inline-error {
 	position: absolute;
 }
 

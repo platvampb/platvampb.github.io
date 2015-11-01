@@ -11,13 +11,20 @@ homeControllers.controller('WGProductsCtrl', ['$scope', '$http', 'subscribeServi
 	$scope.result = {};
 	$scope.user = {};
 
+	//initialize boostrap select
+	$('.selectpicker').selectpicker();
+		$('.dropdown-menu a').click(function(event){
+			$('.bootstrap-select').removeClass('open');
+			$('.bootstrap-select .dropdown-toggle').addClass('selected');
+		});
+
 	$scope.submitForm = function(isValid, inviteForm) {
 
 		$scope.submitted = true;
 
 		if (isValid) {
 			$scope.loading = true;
-			subscribeService.submit($scope.user.email).
+			subscribeService.submit($scope.user).
 				then (function(response) {
 					var data = response.data;
 					if (data.result === true) {
