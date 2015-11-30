@@ -47,6 +47,15 @@ homeControllers.controller('WGProductsCtrl', ['$scope', '$http', 'subscribeServi
 	};
 }]);
 
+homeControllers.controller('aboutUsCtrl', ['$scope', '$anchorScroll', '$location', function($scope, $anchorScroll, $location) {
+
+	$scope.moveDownSection = function ($event) {
+		angular.element("html, body").animate({
+			scrollTop: angular.element($event.currentTarget).closest('section').next().offset().top
+		}, 500);
+	}
+}]);
+
 homeControllers.controller('contactCtrl', ['$scope', '$http', 'contactEmailService', function($scope, $http, contactEmailService) {
 	$scope.submitted = false;
 	$scope.contactLoading = false;

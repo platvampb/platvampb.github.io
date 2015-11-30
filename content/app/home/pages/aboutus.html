@@ -1,6 +1,8 @@
+<div ng-controller="aboutUsCtrl">
 <section class="slogan">
 	<div class="container">
 		<h1 class="text-left">This is where your <span class="highlight">travel fantasies</span> are conceived, shaped and brought to reality, <span class="highlight">effortlessly.</span></h1>
+		<h1><a id="id_join" ng-href="#career" class="text_center btn-ghost btn-join-us">Join us!</i></a></h1>
 	</div>
 </section>
 <section class="mission-statement">
@@ -27,6 +29,8 @@
 		<h1 class="margin-bottom-10">Our Vision</h1>
 		<p>Here at Wherego, we see traveling as an integral part of life, not mere breaks from daily routines. That's why we want to offer an ecosystem where going on adventures can be as easy, rhythmic and enriching, as breathing.</p>
 		</div>
+
+		<div class="scroll-down-arrow" ng-click="moveDownSection($event);"><img src="img/assets/down_arrow.png"></div>
 	</div>
 </section>
 <section class="team gray-bg" id="team">
@@ -59,6 +63,8 @@
 				<p class="team-member-intro">Bo has enjoyed a career building very different applications with a variety of technologies, largely due to his lack of fear to try new things. He also has some ping pong moves.</p>
 			</div>
 		</div>
+		<div class="clearfix"></div>
+		<div class="scroll-down-arrow" ng-click="moveDownSection($event);"><img src="img/assets/down_arrow.png"></div>
 	</div>
 </section>
 <section class="company-value">
@@ -82,6 +88,6 @@
 			<i>To be honest, you made a mistake in your code at line 145. To be honest, you did very well in your last meeting. We are not putting fingers, but honesty welcomes positive criticism and improves productivity.</i><br/>
 		<br/>
 	</p>
-	<h1><a id="id_join" ng-href="#career" class="text_center btn-ghost btn-join-us">Join us!</i></a></h1>
 	</div>
 </section>
+</div>
