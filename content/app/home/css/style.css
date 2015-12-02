@@ -698,13 +698,12 @@ section.mission-statement .container, section.team .container {
 }
 
 section .scroll-down-arrow {
-	position: absolute;
-	right: 60px;
+	position: relative;
+	margin: 40px auto -20px;
 	border-radius: 50%;
 	height: 66px;
 	width: 66px;
 	border: 1.5px solid rgb(51, 51, 51);
-	top: 0px;
 	text-align: center;
 
 	/* CSS Transition */
@@ -779,7 +778,7 @@ section.mission-statement {
 /*contact us section */
 .contact-banner {
 	background-color: #66aecc;
-	background-image: url('../img/assets/tin-can-phone.jpg');
+	background-image: url('../img/assets/letter-box.jpg');
 	background-size: cover;
 	background-position: center;
 	text-align: left;
