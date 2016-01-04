@@ -142,8 +142,7 @@ div.left_margin {
 
 a#id_join {
 	text-decoration:none;
-	color: #d9534f;
-	font-size: 23px;
+	font-size: 24px;
 	text-align:center;
 }
 
@@ -263,6 +262,41 @@ ul.header-ul-list {
 ul.header-ul-list  li {
 	list-style: none;
 }
+
+ul.header-ul-list li a {
+	background: transparent;
+	border: 2px solid #66aecc;
+	border-radius: 5px;
+	font-size: 16px;
+	padding: 7px 12px;
+	display: inline-block;
+
+	/* CSS Transition */
+	-webkit-transition: border .2s ease-in-out, color .2s ease-in-out;
+	-moz-transition: border .2s ease-in-out, color .2s ease-in-out;
+	-ms-transition: border .2s ease-in-out, color .2s ease-in-out;
+	-o-transition: border .2s ease-in-out, color .2s ease-in-out;
+	transition: border .2s ease-in-out, color .2s ease-in-out;
+}
+
+.nav-inverse ul.header-ul-list li a {
+	background: #66aecc;
+	border-color: white;
+}
+
+ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list li a:focus {
+	color: white;
+	border-color: #66aecc;
+	background-color: #66aecc;
+	outline: none;
+}
+
+.nav-inverse ul.header-ul-list li a:hover, .nav-inverse ul.header-ul-list li a:active, .nav-inverse ul.header-ul-list li a:focus {
+	color: #66aecc;
+	border-color: white;
+	background-color: white;
+	outline: none;
+}
 /* responsive code */
 @media (max-width: 767px) {
 	ul.header-ul-list {
@@ -276,33 +310,6 @@ ul.header-ul-list  li {
 		margin-top: 20px;
 		margin-right: 10px;
 		max-width: 150px;
-	}
-
-	ul.header-ul-list li a {
-		background: transparent;
-		border: 2px solid #66aecc;
-		border-radius: 5px;
-		font-size: 16px;
-		padding: 7px 12px;
-		display: inline-block;
-
-		/* CSS Transition */
-		-webkit-transition: border .2s ease-in-out, color .2s ease-in-out;
-		-moz-transition: border .2s ease-in-out, color .2s ease-in-out;
-		-ms-transition: border .2s ease-in-out, color .2s ease-in-out;
-		-o-transition: border .2s ease-in-out, color .2s ease-in-out;
-		transition: border .2s ease-in-out, color .2s ease-in-out;
-	}
-
-	.nav-inverse ul.header-ul-list li a {
-		background: rgba(102, 174, 204, 0.7);
-		border-color: white;
-	}
-
-	ul.header-ul-list li a:hover, .ul.header-ul-list li a:active, .ul.header-ul-list li a:focus {
-		color: #d9534f;
-		border-color: #d9534f;
-		outline: none;
 	}
 }
 
@@ -358,7 +365,7 @@ ul.header-ul-list  li {
 }
 
 .invite-container {
-	margin-top: 40px;
+	margin-top: 30px;
 	font-size: 18px;
 }
 
@@ -386,6 +393,7 @@ ul.header-ul-list  li {
 .banner-content h3 {
 	font-family: "Open Sans",Arial,sans-serif;
 	font-size: 32px;
+	font-weight: bold;
 	position: relative;
 }
 
@@ -395,9 +403,7 @@ ul.header-ul-list  li {
 }
 
 .home-banner .banner-content h1 {
-	letter-spacing: 0.08em;
-	font-family: "Poiret One","Open Sans",Arial,sans-serif;
-	text-transform: uppercase;
+	font-family: "Open Sans",Arial,sans-serif;
 }
 
 /* responsive code */
@@ -624,18 +630,11 @@ button {
 	font-size: 20px;
 	padding: 7px 12px;
 	display: inline-block;
-
-	/* CSS Transition */
-	-webkit-transition: border .2s ease-in-out, color .2s ease-in-out;
-	-moz-transition: border .2s ease-in-out, color .2s ease-in-out;
-	-ms-transition: border .2s ease-in-out, color .2s ease-in-out;
-	-o-transition: border .2s ease-in-out, color .2s ease-in-out;
-	transition: border .2s ease-in-out, color .2s ease-in-out;
 }
 
 .btn-ghost:hover, .btn-ghost:active {
-	color: #d9534f;
-	border-color: #d9534f;
+	color: #33AECC;
+	background-color: #F2F2F2;
 	outline: none;
 }
 
@@ -694,6 +693,37 @@ section.mission-statement, section.team, section.company-value {
 	font-size: 16px;
 }
 
+section.mission-statement .container, section.team .container {
+	position: relative;
+}
+
+section .scroll-down-arrow {
+	position: relative;
+	margin: 40px auto -20px;
+	border-radius: 50%;
+	height: 66px;
+	width: 66px;
+	border: 1.5px solid rgb(51, 51, 51);
+	text-align: center;
+
+	/* CSS Transition */
+	-webkit-transition: background-color .2s ease-in-out;
+	-moz-transition: background-color .2s ease-in-out;
+	-ms-transition: background-color .2s ease-in-out;
+	-o-transition: background-color .2s ease-in-out;
+	transition: background-color .2s ease-in-out;
+}
+
+section .scroll-down-arrow:hover {
+	background-color: white;
+}
+
+section .scroll-down-arrow img {
+	position: relative;
+	width: 56px;
+	top: 8px;
+}
+
 section.mission-statement {
 	background-color: #E0E0E0;
 }
@@ -728,16 +758,32 @@ section.mission-statement {
 	margin-bottom: 15px;
 }
 
-.btn-join-us {
-	float: right;
-}
-
 @media (max-width: 480px) {
 	.btn-join-us {
 		float: none;
 	}
+
+	section .scroll-down-arrow {
+		height: 50px;
+		width: 50px;
+		top: 10px;
+		right: 20px;
+	}
+
+	section .scroll-down-arrow img {
+		width: 48px;
+		top: 4px;
+	}
 }
 /*contact us section */
+.contact-banner {
+	background-color: #66aecc;
+	background-image: url('../img/assets/letter-box.jpg');
+	background-size: cover;
+	background-position: center;
+	text-align: left;
+}
+
 .full-size {
 	width: 100%;
 }
