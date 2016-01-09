@@ -83,7 +83,7 @@
 							</div>
 						</div>
 					</div>
-					<div id="questionContainer" ng-controller="questionsCtrl" ng-show="!result.success">
+					<div id="questionContainer" ng-controller="questionsCtrl">
 						<survey-question-outer ng-repeat="question in questions" content="question" index="$index"></survey-question-outer>
 					</div>
 					<div class="row margin-top-10" ng-show="!result.success">

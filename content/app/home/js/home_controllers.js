@@ -18,8 +18,6 @@ homeControllers.controller('WGProductsCtrl', ['$scope', '$http', 'subscribeServi
 		$('.bootstrap-select .dropdown-toggle').addClass('selected');
 	});
 
-	$scope.submitForm = function(isValid, inviteForm) {
-
 		$scope.submitted = true;
 
 		if (isValid) {
@@ -63,7 +61,11 @@ homeControllers.controller('aboutUsCtrl', ['$scope', '$anchorScroll', '$location
 	}
 }]);
 
+<<<<<<< 9ceaddcaabaa3cc6edf361c1b21859218f5b6587
 homeControllers.controller('questionsCtrl', ['$scope', '$http', 'questionsService', 'citySearchService', function($scope, $http, questionsService, citySearchService) {
+=======
+homeControllers.controller('questionsCtrl', ['$scope', '$http', 'questionsService', function($scope, $http, questionsService) {
+>>>>>>> Add dynamical location search loading.
 	questionsService.getQuestions($scope.contact)
 	.then (function(response) {
 		var data = response.data;
@@ -95,6 +97,7 @@ homeControllers.controller('questionsCtrl', ['$scope', '$http', 'questionsServic
 		}
 	});
 
+<<<<<<< 9ceaddcaabaa3cc6edf361c1b21859218f5b6587
 	$scope.getRegion = function(searchString) {
 		return citySearchService.searchCities(searchString)
 		.then (function(response) {
@@ -109,6 +112,24 @@ homeControllers.controller('questionsCtrl', ['$scope', '$http', 'questionsServic
 			return data.values;
 		});
 	};
+=======
+	var data = { "regions" :[
+		{"id":1, "name":"Toronto", "type_id":6, "belongsToProvince":"Ontario", "belongsToCountry":"Canada"},
+		{"id":12, "name":"Toronto", "type_id":6, "belongsToProvince":"New South Wales", "belongsToCountry":"Australia"},
+		{"id":18, "name":"TorontoIsProvince", "type_id":3, "belongsToCountry":"Canada"},
+		{"id":19, "name":"TorontoIsCountry", "type_id":2}]
+	};
+
+	$scope.locations = data.regions.map(function(region) {
+		region.displayName = region.name;
+		['belongsToProvince', 'belongsToCountry'].map(function(prop) {
+			if (region[prop]) {
+				region.displayName += ", " + region[prop];
+			}
+		});
+		return region;
+	});
+>>>>>>> Add dynamical location search loading.
 }]);
 
 homeControllers.controller('contactCtrl', ['$scope', '$http', 'contactEmailService', function($scope, $http, contactEmailService) {

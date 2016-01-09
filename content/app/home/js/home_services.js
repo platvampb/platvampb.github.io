@@ -15,7 +15,12 @@ wheregoHomeApp
 						var answerObj = user.answers[key]
 						if (typeof(answerObj.answer) === "object" && !Array.isArray(answerObj.answer)) {
 							//the only type of answer that is object but not array = location search
-							var regionName = answerObj.answer.name.split(' - ');
+							var regionName = [];
+							['name', 'belongsToProvince', 'belongsToCountry'].map(function(prop) {
+								if (answerObj.answer[prop]) {
+									regionName.push(answerObj.answer[prop]);
+								}
+							});
 							answerObj.answer = regionName.join('::');
 						}
 						return user.answers[key];
@@ -62,7 +67,7 @@ wheregoHomeApp
 	}])
 	.factory('citySearchService', ['$http', 'mallocDomain', 'regionSearchApi', function($http, mallocDomain, regionSearchApi) {
 		var obj = {
-			searchCities: function(key) {
+			getQuestions: function(key) {
 				return $http.get(mallocDomain + regionSearchApi + "?key=" + key + "&limit=10");
 			}
 		};
