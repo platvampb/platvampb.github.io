@@ -5,6 +5,7 @@ wheregoHomeApp
 	.constant('questionsApi', '/questions')
 	.constant('regionSearchApi', '/regions/places/search')
 	.factory('subscribeService', ['$http', 'siteConfig', function($http, siteConfig) {
+	.factory('subscribeService', ['$http', 'meeDomain', 'subscribeApi', function($http, meeDomain, subscribeApi) {
 		var obj = {
 			success: false,
 			errorMessage: '',
@@ -15,12 +16,7 @@ wheregoHomeApp
 						var answerObj = user.answers[key]
 						if (typeof(answerObj.answer) === "object" && !Array.isArray(answerObj.answer)) {
 							//the only type of answer that is object but not array = location search
-							var regionName = [];
-							['name', 'belongsToProvince', 'belongsToCountry'].map(function(prop) {
-								if (answerObj.answer[prop]) {
-									regionName.push(answerObj.answer[prop]);
-								}
-							});
+							var regionName = answerObj.answer.name.split(' - ');
 							answerObj.answer = regionName.join('::');
 						}
 						return user.answers[key];
@@ -67,7 +63,7 @@ wheregoHomeApp
 	}])
 	.factory('citySearchService', ['$http', 'mallocDomain', 'regionSearchApi', function($http, mallocDomain, regionSearchApi) {
 		var obj = {
-			getQuestions: function(key) {
+			searchCities: function(key) {
 				return $http.get(mallocDomain + regionSearchApi + "?key=" + key + "&limit=10");
 			}
 		};
