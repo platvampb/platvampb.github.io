@@ -629,6 +629,10 @@ section.products {
 	border-bottom: solid 1px;
 }
 
+.form-invite .loadImage {
+	background: url('../img/assets/searching.gif') right 10px center no-repeat; }
+}
+
 .keep-me-posted {
 	min-height: 420px;
 	position: relative;

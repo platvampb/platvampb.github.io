@@ -57,7 +57,7 @@ homeControllers.controller('aboutUsCtrl', ['$scope', '$anchorScroll', '$location
 	}
 }]);
 
-homeControllers.controller('questionsCtrl', ['$scope', '$http', 'questionsService', function($scope, $http, questionsService) {
+homeControllers.controller('questionsCtrl', ['$scope', '$http', 'questionsService', 'citySearchService', function($scope, $http, questionsService, citySearchService) {
 	questionsService.getQuestions($scope.contact)
 	.then (function(response) {
 		var data = response.data;
@@ -89,22 +89,20 @@ homeControllers.controller('questionsCtrl', ['$scope', '$http', 'questionsServic
 		}
 	});
 
-	var data = { "regions" :[
-		{"id":1, "name":"Toronto", "type_id":6, "belongsToProvince":"Ontario", "belongsToCountry":"Canada"},
-		{"id":12, "name":"Toronto", "type_id":6, "belongsToProvince":"New South Wales", "belongsToCountry":"Australia"},
-		{"id":18, "name":"TorontoIsProvince", "type_id":3, "belongsToCountry":"Canada"},
-		{"id":19, "name":"TorontoIsCountry", "type_id":2}]
-	};
-
-	$scope.locations = data.regions.map(function(region) {
-		region.displayName = region.name;
-		['belongsToProvince', 'belongsToCountry'].map(function(prop) {
-			if (region[prop]) {
-				region.displayName += ", " + region[prop];
+	$scope.getRegion = function(searchString) {
+		return citySearchService.searchCities(searchString)
+		.then (function(response) {
+			var data = response.data;
+			if (data.count > 0) {
+				data.values.map(function(region) {
+					region.displayName = region.name;
+					return region;
+				});
 			}
+
+			return data.values;
 		});
-		return region;
-	});
+	};
 }]);
 
 homeControllers.controller('contactCtrl', ['$scope', '$http', 'contactEmailService', function($scope, $http, contactEmailService) {
