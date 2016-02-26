@@ -211,7 +211,7 @@ section.header {
 }
 
 .nav {
-	padding-top: 35px;
+	padding-top: 15px;
 	padding-bottom: 15px;
 	background-color: transparent;
 	width: 100%;
@@ -219,6 +219,8 @@ section.header {
 
 .nav-inverse {
 	float: left;
+	background: rgba(0, 0, 0, 0.65);
+	padding-bottom: 0;
 }
 
 .nav a {
@@ -255,7 +257,7 @@ ul.header-ul-list {
 	font-family: inherit;
 	font-size: 18px;
 	padding: 5px 8px;
-	margin-top: 24px;
+	margin-top: 12px;
 	float: right;
 }
 
@@ -280,7 +282,6 @@ ul.header-ul-list li a {
 }
 
 .nav-inverse ul.header-ul-list li a {
-	background: rgba(0, 0, 0, 0.65);
 	border-color: white;
 }
 
@@ -292,9 +293,8 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 }
 
 .nav-inverse ul.header-ul-list li a:hover, .nav-inverse ul.header-ul-list li a:active, .nav-inverse ul.header-ul-list li a:focus {
-	color: #66aecc;
 	border-color: white;
-	background-color: white;
+	background-color: #66aecc;
 	outline: none;
 }
 /* responsive code */
@@ -404,6 +404,7 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 
 .home-banner .banner-content h1 {
 	font-family: "Open Sans",Arial,sans-serif;
+	margin-top: 0;
 }
 
 /* responsive code */
