@@ -219,7 +219,6 @@ section.header {
 
 .nav-inverse {
 	float: left;
-	background: rgba(0, 0, 0, 0.65);
 	padding-bottom: 0;
 }
 
@@ -294,7 +293,7 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 
 .nav-inverse ul.header-ul-list li a:hover, .nav-inverse ul.header-ul-list li a:active, .nav-inverse ul.header-ul-list li a:focus {
 	border-color: white;
-	background-color: #66aecc;
+	background-color: #009898;
 	outline: none;
 }
 /* responsive code */
@@ -352,7 +351,7 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 }
 
 .home-banner {
-	background-image:url("../img/assets/sea-sky-beach-holiday.jpg");
+	background-image:url("../img/assets/car-on-map.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -366,7 +365,7 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 
 .invite-container {
 	margin-top: 30px;
-	font-size: 18px;
+	font-size: 20px;
 }
 
 .logo {
@@ -380,7 +379,6 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 .banner-content-full-width {
 	float: left;
 	width: 100%;
-	background: rgba(0, 0, 0, 0.65);
 }
 
 .banner-content {
@@ -404,7 +402,6 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 
 .home-banner .banner-content h1 {
 	font-family: "Open Sans",Arial,sans-serif;
-	margin-top: 0;
 }
 
 /* responsive code */
