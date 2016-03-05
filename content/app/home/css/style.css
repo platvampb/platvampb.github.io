@@ -405,6 +405,11 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 }
 
 /* responsive code */
+@media only screen (orientation: portrait) {
+	.home-banner {
+		background-attachment: initial;
+	}
+}
 @media (max-width: 767px) {
 	.banner-content-full-width {
 		top: 185px;
