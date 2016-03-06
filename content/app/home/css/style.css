@@ -410,6 +410,16 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 		background-attachment: initial;
 	}
 }
+@media (min-width: 1921px) {
+	.home-banner {
+		background-image:url("../img/assets/car-on-map-hd.jpg");
+	}
+}
+@media (max-width: 1279px) {
+	.home-banner {
+		background-image:url("../img/assets/car-on-map-sm.jpg");
+	}
+}
 @media (max-width: 767px) {
 	.banner-content-full-width {
 		top: 185px;
