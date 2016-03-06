@@ -405,7 +405,7 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 }
 
 /* responsive code */
-@media only screen (orientation: portrait) {
+@media only screen and (orientation: portrait) {
 	.home-banner {
 		background-attachment: initial;
 	}
