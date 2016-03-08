@@ -741,7 +741,7 @@ section.mission-statement {
 	background-color: #E0E0E0;
 }
 
-.mission-statement h1, section.team h1 {
+.mission-statement h1, section.team h1, section.company-value h1, section#commitments h1 {
 	font-size: 28px;
 	font-weight: bold;
 }
@@ -805,6 +805,7 @@ button.btn-contact {
 	background-image:url('../img/button_logo_color.jpg');
 	background-repeat:repeat-x;
 	color: white;
+	min-width: 100px;
 }
 
 button.wechat-qr-code {
