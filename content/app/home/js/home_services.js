@@ -1,5 +1,5 @@
 wheregoHomeApp
-	.constant('meeDomain', 'http://wherego-mee.azurewebsites.net')
+	.constant('meeDomain', 'http://ec2-52-86-126-166.compute-1.amazonaws.com')
 	.constant('subscribeApi', '/users/subscribe')
 	.constant('sendContactEmailApi', '/contact')
 	.constant('unsubscribeApi', '/users/unsubscribe')

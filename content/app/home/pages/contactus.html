@@ -18,7 +18,7 @@
 				<input type="email" class="margin-bottom-10 border-white form-control" name="email" ng-model="contact.email" placeholder="Your email" required>
 			</div>
 			<div class="col-xs-6">
-				<input type="text" class="margin-bottom-10 border-white form-control" name="number" ng-model="contact.number" placeholder="Your number (with area code)" required>
+				<input type="text" class="margin-bottom-10 border-white form-control" name="number" ng-model="contact.number" placeholder="Your number (with area code)">
 			</div>
 			<div class="col-xs-6">
 				<input type="text" class="margin-bottom-10 border-white form-control" name="title" ng-model="contact.title" placeholder="Your title">
@@ -26,7 +26,7 @@
 			<div class="col-xs-12">
 				<textarea rows="10" class="margin-bottom-10 border-white form-control" name="content" ng-model="contact.content" placeholder="Please provide details of your inquiry." required></textarea>
 			</div>
-			<div class="col-xs-4 col-xs-offset-4">
+			<div class="col-xs-12">
 				<span style="color:red" ng-show="contactForm.name.$touched && contactForm.name.$error.required">
 					<span><p>Please provide your name.</p></span>
 				</span>
@@ -36,6 +36,8 @@
 				<span style="color:red" ng-show="contactForm.number.$touched && contactForm.number.$error.required">
 					<span ><p>Please provide your phone number.</p></span>
 				</span>
+			</div>
+			<div class="col-xs-4 col-xs-offset-4">
 				<button type="submit" class="margin-bottom-10 btn-contact btn col-xs-12 " ng-hide="contactLoading" ng-disabled="contactForm.$invalid" >
 					<span><font size=5>Send</font></span>
 				</button>
