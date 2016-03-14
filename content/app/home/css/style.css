@@ -211,7 +211,7 @@ section.header {
 }
 
 .nav {
-	padding-top: 35px;
+	padding-top: 15px;
 	padding-bottom: 15px;
 	background-color: transparent;
 	width: 100%;
@@ -219,6 +219,7 @@ section.header {
 
 .nav-inverse {
 	float: left;
+	padding-bottom: 0;
 }
 
 .nav a {
@@ -255,7 +256,7 @@ ul.header-ul-list {
 	font-family: inherit;
 	font-size: 18px;
 	padding: 5px 8px;
-	margin-top: 24px;
+	margin-top: 12px;
 	float: right;
 }
 
@@ -280,7 +281,6 @@ ul.header-ul-list li a {
 }
 
 .nav-inverse ul.header-ul-list li a {
-	background: #66aecc;
 	border-color: white;
 }
 
@@ -292,9 +292,8 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 }
 
 .nav-inverse ul.header-ul-list li a:hover, .nav-inverse ul.header-ul-list li a:active, .nav-inverse ul.header-ul-list li a:focus {
-	color: #66aecc;
 	border-color: white;
-	background-color: white;
+	background-color: #009898;
 	outline: none;
 }
 /* responsive code */
@@ -352,7 +351,7 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 }
 
 .home-banner {
-	background-image:url("../img/assets/sea-sky-beach-holiday.jpg");
+	background-image:url("../img/assets/car-on-map.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -366,7 +365,7 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 
 .invite-container {
 	margin-top: 30px;
-	font-size: 18px;
+	font-size: 20px;
 }
 
 .logo {
@@ -380,7 +379,6 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 .banner-content-full-width {
 	float: left;
 	width: 100%;
-	background: rgba(0, 0, 0, 0.65);
 }
 
 .banner-content {
@@ -407,6 +405,21 @@ ul.header-ul-list li a:hover, ul.header-ul-list li a:active, ul.header-ul-list l
 }
 
 /* responsive code */
+@media only screen and (orientation: portrait) {
+	.home-banner {
+		background-attachment: initial;
+	}
+}
+@media (min-width: 1921px) {
+	.home-banner {
+		background-image:url("../img/assets/car-on-map-hd.jpg");
+	}
+}
+@media (max-width: 1279px) {
+	.home-banner {
+		background-image:url("../img/assets/car-on-map-sm.jpg");
+	}
+}
 @media (max-width: 767px) {
 	.banner-content-full-width {
 		top: 185px;
@@ -728,7 +741,7 @@ section.mission-statement {
 	background-color: #E0E0E0;
 }
 
-.mission-statement h1, section.team h1 {
+.mission-statement h1, section.team h1, section.company-value h1, section#commitments h1 {
 	font-size: 28px;
 	font-weight: bold;
 }
@@ -792,6 +805,7 @@ button.btn-contact {
 	background-image:url('../img/button_logo_color.jpg');
 	background-repeat:repeat-x;
 	color: white;
+	min-width: 100px;
 }
 
 button.wechat-qr-code {
