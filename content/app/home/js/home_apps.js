@@ -6,7 +6,8 @@ var wheregoHomeApp = angular.module('HomeApp',
 		'ngMessages',
 		'ui.bootstrap',
 		'homeControllers',
-		'metadataControllers'
+		'metadataControllers',
+		'ui.router'
 	]);
 
 angular.module('HomeApp').provider('siteConfig', function () {
@@ -42,6 +43,7 @@ angular.module('HomeApp').provider('siteConfig', function () {
 		return options;
 	}];
 });
+
 wheregoHomeApp.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
@@ -57,7 +59,7 @@ wheregoHomeApp.config(['$routeProvider',
 			}).
 			when('/career', {
 				templateUrl: 'pages/career.html',
-				title: 'looking for a senior software engineer - join us as partner!'
+				title: 'looking for Software Engineer of all level - join us as partner!'
 			}).
 			when('/contactus', {
 				templateUrl: 'pages/contactus.html',
@@ -74,6 +76,8 @@ wheregoHomeApp.config(['$routeProvider',
 	}]);
 
 wheregoHomeApp.run(['$location', '$rootScope', '$window', '$anchorScroll', '$routeParams', function($location, $rootScope, $window, $anchorScroll, $routeParams) {
+	$window.ga('create', 'UA-75138848-2', 'auto');
+	$window.ga('require', 'linkid');
 	$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
 		$rootScope.title = current.title;
 		$rootScope.navClass = current.navClass;
@@ -82,5 +86,8 @@ wheregoHomeApp.run(['$location', '$rootScope', '$window', '$anchorScroll', '$rou
 			$anchorScroll();
 		}
 		$window.scrollTo(0,0);
+	});
+	$rootScope.$on('$stateChangeSuccess', function (event) {
+		$window.ga('send', 'pageview', $location.path());
 	});
 }]);
