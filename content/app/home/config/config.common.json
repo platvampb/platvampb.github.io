@@ -1,0 +1,7 @@
+{
+	"apiPath": {
+		"subscribe": "/users/subscribe",
+		"sendContactEmail": "/contact",
+		"unsubscribe": "/users/unsubscribe"
+	}
+}

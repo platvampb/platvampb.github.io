@@ -1,0 +1,5 @@
+{
+	"apiEndpoint" : {
+		"mee" : "http://localhost:8081"
+	}
+}
