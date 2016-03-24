@@ -36,7 +36,7 @@ angular.module('HomeApp').provider('siteConfig', function () {
 			});
 		};
 
-		angular.forEach(['config/config.env.json','config/config.common.json'], function(url) {
+		angular.forEach(['config/env.json','config/config.json'], function(url) {
 			getConfig(url);
 		});
 
