@@ -1,14 +1,10 @@
 wheregoHomeApp
-	.constant('meeDomain', 'http://ec2-52-86-126-166.compute-1.amazonaws.com')
-	.constant('subscribeApi', '/users/subscribe')
-	.constant('sendContactEmailApi', '/contact')
-	.constant('unsubscribeApi', '/users/unsubscribe')
-	.factory('subscribeService', ['$http', 'meeDomain', 'subscribeApi', function($http, meeDomain, subscribeApi) {
+	.factory('subscribeService', ['$http', 'siteConfig', function($http, siteConfig) {
 		var obj = {
 			success: false,
 			errorMessage: '',
 			submit: function(email) {
-				return $http.post(meeDomain + subscribeApi, {
+				return $http.post(siteConfig.apiEndpoint.mee + siteConfig.apiPath.subscribe, {
 					'email': email
 				});
 			}
@@ -16,24 +12,24 @@ wheregoHomeApp
 
 		return obj;
 	}])
-	.factory('contactEmailService', ['$http', 'meeDomain', 'sendContactEmailApi', function($http, meeDomain, sendContactEmailApi) {
+	.factory('contactEmailService', ['$http', 'siteConfig', function($http, siteConfig) {
 		var obj = {
 				success: false,
 				errorMessage: '',
 				submit: function(contactData) {
-					return $http.post(meeDomain + sendContactEmailApi, {
+					return $http.post(siteConfig.apiEndpoint.mee + siteConfig.apiPath.sendContactEmail, {
 						'content': contactData
 					});
 				}
 		};
 		return obj;
 	}])
-	.factory('unsubscribeService', ['$http', 'meeDomain', 'unsubscribeApi', function($http, meeDomain, unsubscribeApi) {
+	.factory('unsubscribeService', ['$http', 'siteConfig', function($http, siteConfig) {
 		var obj = {
 			success: false,
 			errorMessage: '',
 			submit: function(email) {
-				return $http.post(meeDomain + unsubscribeApi, {
+				return $http.post(siteConfig.apiEndpoint.mee + siteConfig.apiPath.unsubscribe, {
 					'email': email
 				});
 			}

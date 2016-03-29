@@ -10,6 +10,40 @@ var wheregoHomeApp = angular.module('HomeApp',
 		'ui.router'
 	]);
 
+angular.module('HomeApp').provider('siteConfig', function () {
+	var options = {};
+	this.config = function (opt) {
+		angular.extend(options, opt);
+	};
+	this.$get = [function () {
+		if (!options) {
+		throw new Error('Config options must be configured');
+		}
+
+		var getConfig = function (url) {
+			$.ajax({
+				url: url,
+				type: "get",
+				async: false,
+				cache: false,
+				dataType: "json"
+			})
+			.done(function(data) {
+				angular.extend(options, data);
+			})
+			.fail(function(data) {
+				console.log("Error loading config: " + data);
+			});
+		};
+
+		angular.forEach(['config/env.json','config/config.json'], function(url) {
+			getConfig(url);
+		});
+
+		return options;
+	}];
+});
+
 wheregoHomeApp.config(['$routeProvider',
 	function($routeProvider) {
 		$routeProvider.
