@@ -75,8 +75,8 @@ wheregoHomeApp.config(['$routeProvider',
 			});
 	}]);
 
-wheregoHomeApp.run(['$location', '$rootScope', '$window', '$anchorScroll', '$routeParams', function($location, $rootScope, $window, $anchorScroll, $routeParams) {
-	$window.ga('create', 'UA-75138848-2', 'auto');
+wheregoHomeApp.run(['$location', '$rootScope', '$window', '$anchorScroll', '$routeParams', 'siteConfig', function($location, $rootScope, $window, $anchorScroll, $routeParams) {
+	$window.ga('create', siteConfig.google.analyticsTrackingId, 'auto');
 	$window.ga('require', 'linkid');
 	$rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
 		$rootScope.title = current.title;
