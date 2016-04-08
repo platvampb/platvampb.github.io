@@ -4,7 +4,7 @@ wheregoHomeApp
 			success: false,
 			errorMessage: '',
 			submit: function(email) {
-				return $http.post(siteConfig.api-endpoint.mee + siteConfig.apiPath.subscribe, {
+				return $http.post(siteConfig.apiEndpoint.mee + siteConfig.apiPath.subscribe, {
 					'email': email
 				});
 			}
