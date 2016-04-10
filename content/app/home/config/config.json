@@ -2,6 +2,8 @@
 	"apiPath": {
 		"subscribe": "/users/subscribe",
 		"sendContactEmail": "/contact",
-		"unsubscribe": "/users/unsubscribe"
+		"unsubscribe": "/users/unsubscribe",
+		"questions": "/questions",
+		"regionSearch": "/regions/places/search"
 	}
 }

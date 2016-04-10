@@ -1,11 +1,5 @@
 wheregoHomeApp
-	.constant('subscribeApi', '/users/subscribe')
-	.constant('sendContactEmailApi', '/contact')
-	.constant('unsubscribeApi', '/users/unsubscribe')
-	.constant('questionsApi', '/questions')
-	.constant('regionSearchApi', '/regions/places/search')
 	.factory('subscribeService', ['$http', 'siteConfig', function($http, siteConfig) {
-	.factory('subscribeService', ['$http', 'meeDomain', 'subscribeApi', function($http, meeDomain, subscribeApi) {
 		var obj = {
 			success: false,
 			errorMessage: '',
@@ -52,19 +46,19 @@ wheregoHomeApp
 		};
 		return obj;
 	}])
-	.factory('questionsService', ['$http', 'meeDomain', 'questionsApi', function($http, meeDomain, questionsApi) {
+	.factory('questionsService', ['$http', 'siteConfig', function($http, siteConfig) {
 		var obj = {
 			getQuestions: function(user) {
-				return $http.get(meeDomain + questionsApi);
+				return $http.get(siteConfig.apiEndpoint.mee + siteConfig.apiPath.questions);
 			}
 		};
 
 		return obj;
 	}])
-	.factory('citySearchService', ['$http', 'mallocDomain', 'regionSearchApi', function($http, mallocDomain, regionSearchApi) {
+	.factory('citySearchService', ['$http', 'siteConfig', function($http, siteConfig) {
 		var obj = {
 			searchCities: function(key) {
-				return $http.get(mallocDomain + regionSearchApi + "?key=" + key + "&limit=10");
+				return $http.get(siteConfig.apiEndpoint.malloc + siteConfig.apiPath.regionSearch + "?key=" + key + "&limit=10");
 			}
 		};
 
