@@ -17,7 +17,7 @@ angular.module('HomeApp').provider('siteConfig', function () {
 	};
 	this.$get = [function () {
 		if (!options) {
-		throw new Error('Config options must be configured');
+			throw new Error('Config options must be configured');
 		}
 
 		var getConfig = function (url) {

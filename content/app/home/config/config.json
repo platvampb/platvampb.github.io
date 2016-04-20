@@ -4,6 +4,6 @@
 		"sendContactEmail": "/contact",
 		"unsubscribe": "/users/unsubscribe",
 		"questions": "/questions",
-		"regionSearch": "/regions/places/search"
+		"regionSearch": "/malloc/api/regions/places/search"
 	}
 }
