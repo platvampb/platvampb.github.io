@@ -2,3 +2,4 @@ _git
 .settings
 .project
 /content/app/home/config/env.json
+**/*.DS_Store

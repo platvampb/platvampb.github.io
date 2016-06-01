@@ -1,0 +1,16 @@
+					<div class="row margin-top-10" ng-show="!result.success">
+						<div class="form-group col-sm-12 margin-bottom-25" ng-class="{ 'has-error': theForm[inputId].$invalid && theForm[inputId].$touched}">
+							<label for="{{ inputId }}">{{ content.text }}</label>
+							<select id="{{ inputId }}" name="{{ inputId }}" class="border-white form-control selectpicker"
+								title="Please select one:"
+								multiple data-max-options="1"
+								required
+								ng-change="$parent.validate('{{ inputId }}', theForm)"
+								ng-model="userAnswer.answer">
+								<option ng-repeat="answer in content.Answers" init-select-picker value="{{ answer.key }}">{{ answer.text }}</option>
+							</select>
+							<div ng-show="theForm['{{inputId}}'].$error && theForm['{{inputId}}'].$touched" class="help-block inline-error">
+								<span ng-show="theForm['{{inputId}}'].$error.required">Please provide an answer to this question.</span>
+							</div>
+						</div>
+					</div>
