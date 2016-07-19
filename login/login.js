@@ -25,11 +25,11 @@ function loginCtrlFunc($scope, auth, store, $location){
     $scope.message = 'loading...';
    $scope.loading = true;
    auth.signin({
-     connection: 'Username-Password-Authentication',
+     connection: 'mee-qa',
      username: $scope.user,
      password: $scope.pass,
      authParams: {
-       scope: 'openid name email'
+       scope: 'openid app_metadata'
      }
    });
   }
@@ -39,22 +39,24 @@ function loginCtrlFunc($scope, auth, store, $location){
     $scope.message = 'loading...';
    $scope.loading = true;
    auth.signup({
-     connection: 'Username-Password-Authentication',
+     connection: 'mee-qa',
      username: $scope.user,
      password: $scope.pass,
      authParams: {
-       scope: 'openid name email'
+       scope: 'openid app_metadata'
      }
    });
   }
 
-  $scope.googleLogin = function () {
+
+  $scope.facebookLogin = function () {
     $scope.message = 'loading...';
     $scope.loading = true;
 
     auth.signin({
-      connection: 'google-oauth2',
-      scope: 'openid name email'
+      connection: 'facebook',
+      scope: 'openid app_metadata'
     });
   };
+
 }
